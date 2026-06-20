@@ -82,98 +82,76 @@
             <p class="rc-sub">School of Physics &amp; Astronomy, University of Minnesota</p>
             <p class="rc-role">Undergraduate Research Assistant &amp; UROP Fellow &nbsp;·&nbsp; Advisor: Prof. Yan Liu &nbsp;·&nbsp; Postdoctoral Mentor: <a href="https://cse.umn.edu/physics/shubham-pandey">Shubham Pandey</a></p>
 
-            <div class="project-grid">
-                <div class="pcard">
-                    <h4>SNOLAB R4 Phonon Pulse Template Generation</h4>
-                    <p>
-                        Generated 1×1 and N×M phonon pulse templates for all SuperCDMS SNOLAB R4 detectors
+            <div class="pe-list">
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">SNOLAB R4 Phonon Pulse Template Generation</span>
+                        <a class="gh-link" href="https://github.com/ZhihengLi0/urop/tree/main/snolab" target="_blank">⌥ GitHub</a>
+                    </div>
+                    <p>Generated 1×1 and N×M phonon pulse templates for all SuperCDMS SNOLAB R4 detectors
                         (up to 10 Ge detectors, 12 phonon channels each) using freshly acquired calibration data
                         under the Prompt_V07-02_C0.4.5 production tag. Implemented 4-exponential model fitting,
                         PCA-based N×M component extraction, and ROOT file output for downstream optimal filter
-                        reprocessing by the analysis team.
-                    </p>
-                    <div class="pcard-footer">
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SciPy</span>
-                            <span class="tag">ROOT</span>
-                            <span class="tag">PCA</span>
-                            <span class="tag">Signal Processing</span>
-                        </div>
-                        <a class="gh-link" href="https://github.com/ZhihengLi0/urop/tree/main/snolab" target="_blank">⌥ GitHub</a>
+                        reprocessing by the analysis team.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">ROOT</span><span class="tag">PCA</span><span class="tag">Signal Processing</span>
                     </div>
                 </div>
 
-                <div class="pcard">
-                    <h4>LED Calibration &amp; Glitch Event Analysis Pipeline</h4>
-                    <p>
-                        Built a full data pipeline in Jupyter Notebook to process LED calibration data from
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">LED Calibration &amp; Glitch Event Analysis Pipeline</span>
+                        <a class="gh-link" href="https://github.com/ZhihengLi0/urop/tree/main/LED" target="_blank">⌥ GitHub</a>
+                    </div>
+                    <p>Built a full data pipeline in Jupyter Notebook to process LED calibration data from
                         11 cryogenic germanium detector channels. Implemented baseline subtraction, SNR-based
                         glitch detection, peak alignment, and exponential fitting over 5,200+ events (10+ GB raw data).
                         Added pickle caching for fast re-runs and explored ML approaches for glitch event
-                        identification. Incorporated postdoc feedback (SNR ratio criterion, adaptive baseline selection).
-                    </p>
-                    <div class="pcard-footer">
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">NumPy / Pandas</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">MSI HPC</span>
-                        </div>
-                        <a class="gh-link" href="https://github.com/ZhihengLi0/urop/tree/main/LED" target="_blank">⌥ GitHub</a>
+                        identification. Incorporated postdoc feedback (SNR ratio criterion, adaptive baseline selection).</p>
+                    <div class="tags">
+                        <span class="tag">Python</span><span class="tag">NumPy / Pandas</span><span class="tag">Machine Learning</span><span class="tag">MSI HPC</span>
                     </div>
                 </div>
 
-                <div class="pcard">
-                    <h4>RuOx Thermometer Calibration Curve Extension</h4>
-                    <p>
-                        Independently extended factory calibration curves for two RuOx sensors (R31279 &amp; R31839) from
-                        factory range to the full <strong>5 mK – 300 K</strong> operational range of the
-                        BlueFors dilution refrigerator. Implemented three fitting models
-                        (degree-5 log-polynomial, PCHIP + Mott VRH, cubic log-polynomial) and generated
-                        validated Lake Shore .340 files for direct controller loading.
-                        Preferred model: PCHIP + Mott VRH for physical motivation and exact data reproduction.
-                    </p>
-                    <div class="pcard-footer">
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SciPy</span>
-                            <span class="tag">Cryogenics</span>
-                            <span class="tag">Curve Fitting</span>
-                        </div>
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">RuOx Thermometer Calibration Curve Extension</span>
                         <a class="gh-link" href="https://github.com/ZhihengLi0/urop/tree/main/RuOx" target="_blank">⌥ GitHub</a>
                     </div>
+                    <p>Independently extended factory calibration curves for two RuOx sensors (R31279 &amp; R31839)
+                        to the full <strong>5 mK – 300 K</strong> operational range of the BlueFors dilution refrigerator.
+                        Implemented three fitting models (degree-5 log-polynomial, PCHIP + Mott VRH, cubic log-polynomial)
+                        and generated validated Lake Shore .340 files for direct controller loading.
+                        Preferred model: PCHIP + Mott VRH for physical motivation and exact data reproduction.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">Cryogenics</span><span class="tag">Curve Fitting</span>
+                    </div>
                 </div>
 
-                <div class="pcard">
-                    <h4>BlueFors Database Migration &amp; Slack Alert System</h4>
-                    <p>
-                        Independently migrated a 2.1 GB PostgreSQL database (8.25 M rows, 13 tables) from the BlueFors
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">BlueFors Database Migration &amp; Slack Alert System</span>
+                        <a class="gh-link" href="https://github.com/ZhihengLi0/column" target="_blank">⌥ GitHub</a>
+                    </div>
+                    <p>Independently migrated a 2.1 GB PostgreSQL database (8.25 M rows, 13 tables) from the BlueFors
                         Windows control computer to a Linux server with a 12.7 TB external drive, resolving
                         storage constraints via PostgreSQL data-directory relocation. Built a Slack bot
                         (BlueFors-Alert) integrated with the cs2 database to send real-time notifications
-                        when refrigerator sensor values (temperature, pressure) exceed defined thresholds.
-                    </p>
-                    <div class="pcard-footer">
-                        <div class="tags">
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Slack API</span>
-                            <span class="tag">Linux / Raspberry Pi</span>
-                        </div>
-                        <a class="gh-link" href="https://github.com/ZhihengLi0/column" target="_blank">⌥ GitHub</a>
+                        when refrigerator sensor values (temperature, pressure) exceed defined thresholds.</p>
+                    <div class="tags">
+                        <span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Slack API</span><span class="tag">Linux / Raspberry Pi</span>
                     </div>
                 </div>
 
-                <div class="pcard">
-                    <h4>BlueFors Dilution Refrigerator Installation</h4>
-                    <p>
-                        Participated in the physical installation of a ~$500K BlueFors dilution refrigerator
-                        under guidance of a factory field engineer. Set up the compressor
-                        water-cooling circulation system; assembled a heater on the 4K plate to diagnose
-                        elevated temperature and identified high P5 valve pressure as the root cause.
-                        Assisted with component assembly, vacuum pump-down, and initial 4K cooldown verification.
-                    </p>
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">BlueFors Dilution Refrigerator Installation</span>
+                    </div>
+                    <p>Participated in the physical installation of a ~$500K BlueFors dilution refrigerator
+                        under guidance of a factory field engineer. Set up the compressor water-cooling
+                        circulation system; assembled a heater on the 4K plate to diagnose elevated temperature
+                        and identified high P5 valve pressure as the root cause. Assisted with component
+                        assembly, vacuum pump-down, and initial 4K cooldown verification.</p>
                     <div class="photo-strip">
                         <img class="photo-thumb" src="assets/images/installation/01_unboxing.jpg"     alt="BlueFors unboxing"      onclick="openLb(this.src)">
                         <img class="photo-thumb" src="assets/images/installation/02_vacuum_shell.png" alt="Vacuum shell"            onclick="openLb(this.src)">
@@ -183,27 +161,21 @@
                         <img class="photo-thumb" src="assets/images/installation/06_control_unit.jpg" alt="BlueFors control unit"  onclick="openLb(this.src)">
                     </div>
                     <div class="tags">
-                        <span class="tag">Cryogenics</span>
-                        <span class="tag">Hardware</span>
-                        <span class="tag">Instrumentation</span>
-                        <span class="tag">Diagnostics</span>
+                        <span class="tag">Cryogenics</span><span class="tag">Hardware</span><span class="tag">Instrumentation</span><span class="tag">Diagnostics</span>
                     </div>
                 </div>
 
-                <div class="pcard">
-                    <h4>Optimal Filter Theory Self-Study</h4>
-                    <p>
-                        Self-studied Fourier transform, convolution, and optimal filter theory in the
-                        context of SuperCDMS data analysis. Independently derived connections between
-                        convolution as a linear mapping, the Fourier transform as a function-space inner
-                        product, and the time-frequency uncertainty principle. Explored Green's function
-                        approaches to signal decomposition — a direction confirmed to be active in
-                        signal-processing research.
-                    </p>
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">Optimal Filter Theory Self-Study</span>
+                    </div>
+                    <p>Self-studied Fourier transform, convolution, and optimal filter theory in the context
+                        of SuperCDMS data analysis. Independently derived connections between convolution as a
+                        linear mapping, the Fourier transform as a function-space inner product, and the
+                        time-frequency uncertainty principle. Explored Green's function approaches to signal
+                        decomposition — a direction confirmed to be active in signal-processing research.</p>
                     <div class="tags">
-                        <span class="tag">Signal Processing</span>
-                        <span class="tag">Fourier Analysis</span>
-                        <span class="tag">Mathematics</span>
+                        <span class="tag">Signal Processing</span><span class="tag">Fourier Analysis</span><span class="tag">Mathematics</span>
                     </div>
                 </div>
             </div>

@@ -118,16 +118,23 @@ a:hover { text-decoration: underline; }
 .rc-sub { font-size: .875rem; color: #666; margin-bottom: 4px; }
 .rc-role { font-style: italic; color: #555; font-size: .875rem; margin-bottom: 20px; }
 
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.pcard {
-    background: #f8fafc;
-    border: 1px solid #e8eef5;
-    border-radius: 8px;
-    padding: 16px 18px;
+/* ── Project entry list (replaces 2-col card grid) ── */
+.pe-list { display: flex; flex-direction: column; }
+.pe {
+    padding: 16px 0;
+    border-bottom: 1px solid #edf2f7;
 }
-.pcard h4 { font-size: .9rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
-.pcard p { font-size: .835rem; color: #555; margin-bottom: 10px; line-height: 1.55; }
-.pcard-footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px; flex-wrap: wrap; }
+.pe:last-child { border-bottom: none; }
+.pe-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+.pe-title { font-size: .95rem; font-weight: 700; color: #1a1a1a; }
+.pe p { font-size: .875rem; color: #555; line-height: 1.6; margin-bottom: 8px; }
+.pe-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
 .tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag {
     background: #eff6ff;
