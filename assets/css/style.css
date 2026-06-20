@@ -104,8 +104,11 @@ a:hover { text-decoration: underline; }
 
 /* ── About section ── */
 .about-section { padding: 48px 0 36px; }
-.about-bio { font-size: .9375rem; color: #444; line-height: 1.8; margin-bottom: 14px; text-align: justify; }
-.about-bio:last-child { margin-bottom: 0; }
+.about-bio { font-size: .9375rem; color: #444; line-height: 1.8; margin-bottom: 16px; text-align: justify; }
+.skills-block { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+.skills-row { display: flex; gap: 12px; font-size: .875rem; line-height: 1.6; }
+.skills-label { flex-shrink: 0; width: 100px; font-weight: 700; color: #1a1a1a; padding-top: 1px; }
+.skills-val { color: #555; }
 
 .hero-links { font-size: .875rem; color: #555; display: flex; flex-wrap: wrap; gap: 8px 6px; align-items: center; }
 
