@@ -104,7 +104,7 @@ a:hover { text-decoration: underline; }
 
 /* ── About section ── */
 .about-section { padding: 48px 0 36px; }
-.about-bio { font-size: .93rem; color: #444; line-height: 1.7; margin-bottom: 12px; }
+.about-bio { font-size: .9375rem; color: #444; line-height: 1.8; margin-bottom: 14px; text-align: justify; }
 .about-bio:last-child { margin-bottom: 0; }
 
 .hero-links { font-size: .875rem; color: #555; display: flex; flex-wrap: wrap; gap: 8px 6px; align-items: center; }
@@ -173,9 +173,15 @@ a:hover { text-decoration: underline; }
     justify-content: space-between;
     align-items: flex-start;
     gap: 16px;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
-.rc-header h3 { font-size: 1.1rem; font-weight: 700; color: #1a1a1a; }
+.rc-header h3 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -.01em;
+}
 .badge {
     background: #eff6ff;
     color: #1d4ed8;
@@ -186,13 +192,21 @@ a:hover { text-decoration: underline; }
     white-space: nowrap;
     flex-shrink: 0;
 }
-.rc-sub { font-size: .875rem; color: #666; margin-bottom: 4px; }
-.rc-role { font-style: italic; color: #555; font-size: .875rem; margin-bottom: 20px; }
+.rc-sub { font-size: .9rem; color: #555; margin-bottom: 3px; font-weight: 500; }
+.rc-role {
+    font-size: .875rem;
+    color: #666;
+    margin-bottom: 0;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 4px;
+}
+.rc-role a { color: #0057b8; }
 
-/* ── Project entry list (replaces 2-col card grid) ── */
-.pe-list { display: flex; flex-direction: column; }
+/* ── Project entry list ── */
+.pe-list { display: flex; flex-direction: column; margin-top: 4px; }
 .pe {
-    padding: 16px 0;
+    padding: 18px 0;
     border-bottom: 1px solid #edf2f7;
 }
 .pe:last-child { border-bottom: none; }
@@ -201,10 +215,10 @@ a:hover { text-decoration: underline; }
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
 }
-.pe-title { font-size: .95rem; font-weight: 700; color: #1a1a1a; }
-.pe p { font-size: .875rem; color: #555; line-height: 1.6; margin-bottom: 8px; }
+.pe-title { font-size: 1rem; font-weight: 700; color: #1a1a1a; }
+.pe p { font-size: .9375rem; color: #444; line-height: 1.75; margin-bottom: 8px; text-align: justify; }
 .pe-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
 .tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag {
