@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zhiheng Li — Undergraduate Researcher at University of Minnesota, SuperCDMS Dark Matter Experiment, applying to Stanford CS/AI.">
+    <title>Zhiheng Li</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ══ Navbar ══ -->
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="#about" class="nav-brand">Zhiheng Li</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#news">News</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ══ Hero / About ══ -->
+<section id="about" class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-photo">
+                <!-- Replace profile.jpg with your own photo, or remove this block -->
+                <img src="assets/images/profile.jpg"
+                     alt="Zhiheng Li"
+                     onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'photo-placeholder',textContent:'👤'}))">
+            </div>
+            <div class="hero-body">
+                <h1>Zhiheng (Kevin) Li</h1>
+                <p class="hero-title">Undergraduate Researcher &amp; UROP Fellow</p>
+                <p class="hero-affil">
+                    <a href="https://twin-cities.umn.edu/">University of Minnesota, Twin Cities</a><br>
+                    B.S. Mathematics (CS Minor) &nbsp;·&nbsp; Expected May 2028<br>
+                    SuperCDMS Dark Matter Experiment &nbsp;·&nbsp; Advisor:
+                    <a href="https://physics.umn.edu/people/yan-liu">Prof. Yan Liu</a>
+                </p>
+                <div class="hero-links">
+                    <a href="mailto:li004628@umn.edu">✉ li004628@umn.edu</a>
+                    <a href="https://github.com/ZhihengLi0" target="_blank">⌥ GitHub</a>
+                    <a href="assets/CV_ZhihengLi.pdf" target="_blank">📄 CV</a>
+                </div>
+                <div class="hero-bio">
+                    <p>
+                        I am a rising junior (Class of 2028) at the University of Minnesota, majoring in
+                        <strong>Mathematics</strong> with a minor in <strong>Computer Science</strong>,
+                        maintaining a 4.0 GPA and Dean's List honors. I work as an Undergraduate Research
+                        Assistant and UROP Fellow in the
+                        <a href="https://cdms.umn.edu/">SuperCDMS Dark Matter Experiment</a>
+                        at the School of Physics &amp; Astronomy, building Python data pipelines and
+                        signal-processing workflows for dark matter detection at millikelvin temperatures.
+                    </p>
+                    <p>
+                        My interests lie at the intersection of <strong>physics data analysis</strong>,
+                        <strong>scientific computing</strong>, and <strong>machine learning</strong>.
+                        I am applying to graduate programs (PhD/MS) in <strong>CS / AI</strong>
+                        — target: Stanford — aiming to bring rigorous quantitative methods
+                        from experimental physics into AI research.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Research ══ -->
+<section id="research" class="section alt">
+    <div class="container">
+        <h2 class="section-title">Research Experience</h2>
+        <div class="research-card">
+            <div class="rc-header">
+                <h3>SuperCDMS Dark Matter Experiment</h3>
+                <span class="badge">Oct 2025 – Present</span>
+            </div>
+            <p class="rc-sub">School of Physics &amp; Astronomy, University of Minnesota &nbsp;·&nbsp; Advisor: Prof. Yan Liu</p>
+            <p class="rc-role">Undergraduate Research Assistant &amp; UROP Fellow</p>
+
+            <div class="project-grid">
+                <div class="pcard">
+                    <h4>SNOLAB R4 Phonon Pulse Template Generation</h4>
+                    <p>
+                        Generated 1×1 and N×M phonon pulse templates for all SuperCDMS SNOLAB R4 detectors
+                        (up to 10 Ge detectors, 12 phonon channels each) using freshly acquired calibration data
+                        under the Prompt_V07-02_C0.4.5 production tag. Implemented 4-exponential model fitting,
+                        PCA-based N×M component extraction, and ROOT file output for downstream optimal filter
+                        reprocessing by the analysis team.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SciPy</span>
+                        <span class="tag">ROOT</span>
+                        <span class="tag">PCA</span>
+                        <span class="tag">Signal Processing</span>
+                    </div>
+                </div>
+
+                <div class="pcard">
+                    <h4>LED Calibration &amp; Glitch Event Analysis Pipeline</h4>
+                    <p>
+                        Built a full data pipeline in Jupyter Notebook to process LED calibration data from
+                        11 cryogenic germanium detector channels. Implemented baseline subtraction, SNR-based
+                        glitch detection, peak alignment, and exponential fitting over 5,200+ events (10+ GB raw data).
+                        Added pickle caching for fast re-runs and explored ML approaches for glitch event
+                        identification. Incorporated postdoc feedback (SNR ratio criterion, adaptive baseline selection).
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NumPy / Pandas</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">MSI HPC</span>
+                    </div>
+                </div>
+
+                <div class="pcard">
+                    <h4>RuOx Thermometer Calibration Curve Extension</h4>
+                    <p>
+                        Extended factory calibration curves for two RuOx sensors (R31279 &amp; R31839) from
+                        factory range to the full <strong>5 mK – 300 K</strong> operational range of the
+                        BlueFors dilution refrigerator. Implemented three fitting models
+                        (degree-5 log-polynomial, PCHIP + Mott VRH, cubic log-polynomial) and generated
+                        validated Lake Shore .340 files for direct controller loading.
+                        Preferred model: PCHIP + Mott VRH for physical motivation and exact data reproduction.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SciPy</span>
+                        <span class="tag">Cryogenics</span>
+                        <span class="tag">Curve Fitting</span>
+                    </div>
+                </div>
+
+                <div class="pcard">
+                    <h4>BlueFors Database Migration &amp; Slack Alert System</h4>
+                    <p>
+                        Migrated a 2.1 GB PostgreSQL database (8.25 M rows, 13 tables) from the BlueFors
+                        Windows control computer to a Linux server with a 12.7 TB external drive, resolving
+                        storage constraints via PostgreSQL data-directory relocation. Built a Slack bot
+                        (BlueFors-Alert) integrated with the cs2 database to send real-time notifications
+                        when refrigerator sensor values (temperature, pressure) exceed defined thresholds.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Slack API</span>
+                        <span class="tag">Linux / Raspberry Pi</span>
+                    </div>
+                </div>
+
+                <div class="pcard">
+                    <h4>BlueFors Dilution Refrigerator Installation</h4>
+                    <p>
+                        Participated in the physical installation of a ~$500K BlueFors dilution refrigerator
+                        under guidance of a factory field engineer. Independently set up the compressor
+                        water-cooling circulation system; assembled a heater on the 4K plate to diagnose
+                        elevated temperature and identified high P5 valve pressure as the root cause.
+                        Assisted with component assembly, vacuum pump-down, and initial 4K cooldown verification.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Cryogenics</span>
+                        <span class="tag">Hardware</span>
+                        <span class="tag">Instrumentation</span>
+                        <span class="tag">Diagnostics</span>
+                    </div>
+                </div>
+
+                <div class="pcard">
+                    <h4>Optimal Filter Theory Self-Study</h4>
+                    <p>
+                        Self-studied Fourier transform, convolution, and optimal filter theory in the
+                        context of SuperCDMS data analysis. Independently derived connections between
+                        convolution as a linear mapping, the Fourier transform as a function-space inner
+                        product, and the time-frequency uncertainty principle. Explored Green's function
+                        approaches to signal decomposition — a direction confirmed to be active in
+                        signal-processing research.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Signal Processing</span>
+                        <span class="tag">Fourier Analysis</span>
+                        <span class="tag">Mathematics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ Projects ══ -->
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Other Projects</h2>
+        <div class="proj-list">
+
+            <div class="proj-item">
+                <div class="pi-header">
+                    <h3>Novel Billiards Rest (架杆) — Entrepreneurship Project</h3>
+                    <span class="badge">Oct 2024 – Jun 2025</span>
+                </div>
+                <p class="pi-role">Team Leader &nbsp;·&nbsp; Beijing, China</p>
+                <p>
+                    Led a cross-university student team to design and prototype a cost-efficient
+                    <strong>billiards rest (架杆)</strong> addressing equipment inefficiencies in existing
+                    designs. Conducted market analysis and product testing to evaluate commercialization
+                    potential. <strong>Invited to present at Tsinghua X-Lab &amp; Kering Entrepreneurship
+                    Roadshow</strong>, communicating with high-profile AI teams and industry leaders.
+                    Won <strong>1st Prize</strong> at the 15th National College E-Commerce
+                    "Innovation, Creativity &amp; Entrepreneurship" Challenge (campus level).
+                </p>
+                <div class="tags">
+                    <span class="tag">Product Design</span>
+                    <span class="tag">Market Analysis</span>
+                    <span class="tag">Entrepreneurship</span>
+                    <span class="tag">Team Leadership</span>
+                </div>
+            </div>
+
+            <div class="proj-item">
+                <div class="pi-header">
+                    <h3>Beverage Innovation Project — College Student Innovation Competition</h3>
+                    <span class="badge">2024 – 2025</span>
+                </div>
+                <p class="pi-role">Team Member &nbsp;·&nbsp; Beijing, China</p>
+                <p>
+                    Contributed as a team member to a beverage innovation project ("旋流解封，营养升华")
+                    that won multiple prizes at regional and national levels, including
+                    <strong>1st Prize</strong> at the 4th Beijing University Student Innovation &amp;
+                    Entrepreneurship Competition (Science &amp; Technology Track) and
+                    <strong>1st Prize (Beijing District)</strong> at the China International College
+                    Students' Innovation Competition (2025).
+                </p>
+                <div class="tags">
+                    <span class="tag">Innovation</span>
+                    <span class="tag">Product Development</span>
+                    <span class="tag">Competition</span>
+                </div>
+            </div>
+
+            <div class="proj-item">
+                <div class="pi-header">
+                    <h3>Low-Carbon Transition in China's Steel Industry</h3>
+                    <span class="badge">Oct 2024 – May 2025</span>
+                </div>
+                <p class="pi-role">Undergraduate Researcher &nbsp;·&nbsp; Beijing, China</p>
+                <p>
+                    Assisted in research on low-carbon transition pathways for China's steel industry.
+                    Contributed to data collection, database construction, and quantitative analysis
+                    for national low-carbon policy initiatives.
+                </p>
+                <div class="tags">
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Environmental Policy</span>
+                    <span class="tag">Research</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══ Awards ══ -->
+<section id="awards" class="section alt">
+    <div class="container">
+        <h2 class="section-title">Awards &amp; Honors</h2>
+
+        <div class="award-table">
+            <div class="award-row">
+                <span class="aw-year">2026</span>
+                <span class="aw-text"><strong>UROP Fellowship</strong> — Undergraduate Research Opportunities Program, University of Minnesota (Summer 2026)</span>
+            </div>
+            <div class="award-row">
+                <span class="aw-year">2026</span>
+                <span class="aw-text"><strong>Dean's List</strong> — Fall 2025 &amp; Spring 2026, University of Minnesota &nbsp;(GPA 4.0 / 4.0)</span>
+            </div>
+            <div class="award-row">
+                <span class="aw-year">2026</span>
+                <span class="aw-text"><strong>Tau Sigma Academic Honor Society</strong> — Initiated at University of Minnesota – Twin Cities, January 23, 2026</span>
+            </div>
+            <div class="award-row">
+                <span class="aw-year">2025</span>
+                <span class="aw-text"><strong>1st Prize</strong> — 4th Beijing University Student Innovation &amp; Entrepreneurship Competition, Science &amp; Technology Track</span>
+            </div>
+            <div class="award-row">
+                <span class="aw-year">2025</span>
+                <span class="aw-text"><strong>1st Prize (Beijing District)</strong> — China International College Students' Innovation Competition (2025)</span>
+            </div>
+            <div class="award-row">
+                <span class="aw-year">2025</span>
+                <span class="aw-text"><strong>1st Prize</strong> — 15th National College E-Commerce "Innovation, Creativity &amp; Entrepreneurship" Challenge, Campus Level &nbsp;·&nbsp; Team Leader</span>
+            </div>
+            <div class="award-row">
+                <span class="aw-year">2025</span>
+                <span class="aw-text"><strong>2nd Prize</strong> — NECCS National English Competition for College Students</span>
+            </div>
+            <div class="award-row">
+                <span class="aw-year">2025</span>
+                <span class="aw-text"><strong>3rd Prize</strong> — China International College Students' Innovation Competition (2025), Campus Level &nbsp;·&nbsp; Team Leader</span>
+            </div>
+            <div class="award-row">
+                <span class="aw-year">2024</span>
+                <span class="aw-text"><strong>Third-Tier Scholarship</strong> — Beijing University of Agriculture, 2023–2024 Academic Year</span>
+            </div>
+        </div>
+
+        <!-- Certificate gallery -->
+        <p class="gallery-label">Certificates</p>
+        <div class="cert-grid">
+            <figure class="cert-card" onclick="openLb('assets/images/awards/tau_sigma.jpg')">
+                <img src="assets/images/awards/tau_sigma.jpg" alt="Tau Sigma Honor Society Certificate">
+                <figcaption>Tau Sigma Honor Society<br>UMN, January 2026</figcaption>
+            </figure>
+            <figure class="cert-card" onclick="openLb('assets/images/awards/beijing_startup_first.jpg')">
+                <img src="assets/images/awards/beijing_startup_first.jpg" alt="Beijing Innovation Competition 1st Prize">
+                <figcaption>4th Beijing Innovation &amp; Entrepreneurship Competition<br>1st Prize · Science &amp; Technology Track</figcaption>
+            </figure>
+            <figure class="cert-card" onclick="openLb('assets/images/awards/innovation_beijing_first.jpg')">
+                <img src="assets/images/awards/innovation_beijing_first.jpg" alt="China Innovation Competition Beijing 1st Prize">
+                <figcaption>China International Innovation Competition (2025)<br>1st Prize · Beijing District</figcaption>
+            </figure>
+            <figure class="cert-card" onclick="openLb('assets/images/awards/ecommerce_first.jpg')">
+                <img src="assets/images/awards/ecommerce_first.jpg" alt="E-Commerce Challenge 1st Prize">
+                <figcaption>15th National E-Commerce Challenge<br>1st Prize · Campus Level · Team Leader</figcaption>
+            </figure>
+            <figure class="cert-card" onclick="openLb('assets/images/awards/innovation_campus_third.jpg')">
+                <img src="assets/images/awards/innovation_campus_third.jpg" alt="Innovation Competition Campus 3rd Prize">
+                <figcaption>China International Innovation Competition (2025)<br>3rd Prize · Campus Level</figcaption>
+            </figure>
+            <figure class="cert-card" onclick="openLb('assets/images/awards/scholarship_bua.jpg')">
+                <img src="assets/images/awards/scholarship_bua.jpg" alt="BUA Third-Tier Scholarship">
+                <figcaption>Beijing University of Agriculture<br>Third-Tier Scholarship · 2023–2024</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLb()">
+    <span class="lb-close">&times;</span>
+    <img id="lb-img" src="" alt="Certificate">
+</div>
+
+<!-- ══ News ══ -->
+<section id="news" class="section">
+    <div class="container">
+        <h2 class="section-title">News</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <span class="nd">Jun 2026</span>
+                <span>Deployed a <strong>Slack alert bot</strong> (BlueFors-Alert) integrated with the PostgreSQL cs2 database for real-time refrigerator monitoring — end-to-end pipeline confirmed working.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Jun 2026</span>
+                <span>Generated SNOLAB R4 phonon pulse templates (1×1 and N×M) for SuperCDMS detectors; handed off ROOT files to analysis team ahead of the June 18 deadline.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Jun 2026</span>
+                <span>Completed migration of the 2.1 GB BlueFors PostgreSQL database (8.25 M rows) to a 12.7 TB Linux server — storage issue fully resolved.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">May 2026</span>
+                <span>Awarded the <strong>UROP Fellowship</strong> by the University of Minnesota for Summer 2026 research.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">May 2026</span>
+                <span>Extended RuOx thermometer calibration curves (5 mK – 300 K) and generated validated Lake Shore .340 files for the BlueFors controller.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">May 2026</span>
+                <span>Participated in the physical installation of a ~$500K <strong>BlueFors dilution refrigerator</strong> at UMN Physics; independently diagnosed a 4K plate heating issue.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Spring 2026</span>
+                <span>Named to <strong>Dean's List</strong> at the University of Minnesota (GPA 4.0 / 4.0).</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Jan 2026</span>
+                <span>Inducted into <strong>Tau Sigma</strong> Academic Honor Society at the University of Minnesota – Twin Cities.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Fall 2025</span>
+                <span>Named to <strong>Dean's List</strong> at the University of Minnesota (GPA 4.0 / 4.0).</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Oct 2025</span>
+                <span>Joined the <strong>SuperCDMS Dark Matter Experiment</strong> as an Undergraduate Research Assistant under Prof. Yan Liu.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Sep 2025</span>
+                <span><strong>1st Prize</strong> — 4th Beijing University Student Innovation &amp; Entrepreneurship Competition (Science &amp; Technology Track).</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">May 2025</span>
+                <span><strong>1st Prize (Beijing District)</strong> — China International College Students' Innovation Competition (2025).</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">May 2025</span>
+                <span>Presented the billiards rest prototype at <strong>Tsinghua X-Lab &amp; Kering Entrepreneurship Roadshow</strong>.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">May 2025</span>
+                <span><strong>1st Prize</strong> — 15th National College E-Commerce Challenge, Campus Level (Team Leader).</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ══ Footer ══ -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Zhiheng Li &nbsp;·&nbsp; <a href="mailto:li004628@umn.edu">li004628@umn.edu</a> &nbsp;·&nbsp; University of Minnesota, Twin Cities</p>
+    </div>
+</footer>
+
+<script>
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+});
+
+// Active nav on scroll
+const sections = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+    navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}, { passive: true });
+
+// Lightbox
+function openLb(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+}
+function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+</script>
+
+</body>
+</html>
