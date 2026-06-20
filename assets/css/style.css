@@ -295,6 +295,18 @@ a:hover { text-decoration: underline; }
 .aw-text { font-size: .9rem; color: #333; }
 .aw-text strong { color: #1a1a1a; }
 
+/* ── Billiards project narrative ── */
+.proj-story { font-size: .9375rem; color: #444; line-height: 1.8; margin-bottom: 10px; text-align: justify; }
+.proj-motto {
+    font-size: .9rem;
+    color: #555;
+    font-style: italic;
+    border-left: 3px solid #c8a96e;
+    padding-left: 14px;
+    margin: 10px 0 14px;
+    line-height: 1.7;
+}
+
 /* ── Billiards project docs & gallery ── */
 .proj-docs { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
 .doc-link {
