@@ -161,23 +161,18 @@ a:hover { text-decoration: underline; }
 }
 
 /* ── Research block ── */
-.research-card {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 28px 30px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.05);
-}
 .rc-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 16px;
     margin-bottom: 4px;
+    padding-left: 14px;
+    border-left: 4px solid #1a3a6b;
 }
 .rc-header h3 {
     font-family: 'Merriweather', Georgia, serif;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #1a1a1a;
     letter-spacing: -.01em;
@@ -192,13 +187,13 @@ a:hover { text-decoration: underline; }
     white-space: nowrap;
     flex-shrink: 0;
 }
-.rc-sub { font-size: .9rem; color: #555; margin-bottom: 3px; font-weight: 500; }
+.rc-sub { font-size: .9rem; color: #555; margin-bottom: 3px; font-weight: 500; padding-left: 18px; }
 .rc-role {
     font-size: .875rem;
     color: #666;
-    margin-bottom: 0;
-    padding-bottom: 18px;
-    border-bottom: 2px solid #e2e8f0;
+    padding-left: 18px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d1d9e0;
     margin-bottom: 4px;
 }
 .rc-role a { color: #0057b8; }
