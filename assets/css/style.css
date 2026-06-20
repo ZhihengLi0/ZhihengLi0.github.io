@@ -154,6 +154,29 @@ a:hover { text-decoration: underline; }
 }
 .gh-link:hover { background: #e2e8f0; color: #1a1a1a; text-decoration: none; }
 
+/* ── In-card photo strip ── */
+.photo-strip {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin: 12px 0 10px;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+}
+.photo-strip::-webkit-scrollbar { height: 4px; }
+.photo-strip::-webkit-scrollbar-thumb { background: #d0d7de; border-radius: 2px; }
+.photo-thumb {
+    flex-shrink: 0;
+    width: 100px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: zoom-in;
+    border: 1px solid #e2e8f0;
+    transition: opacity .15s, transform .15s;
+}
+.photo-thumb:hover { opacity: .85; transform: scale(1.03); }
+
 /* ── Other Projects ── */
 .proj-list { display: flex; flex-direction: column; gap: 30px; }
 .proj-item { border-left: 3px solid #0057b8; padding-left: 22px; }
