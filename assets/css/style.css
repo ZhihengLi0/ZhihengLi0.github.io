@@ -63,6 +63,7 @@ a:hover { text-decoration: underline; }
     margin: 0 auto;
     padding: 0 28px;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 36px;
 }
