@@ -127,6 +127,7 @@ a:hover { text-decoration: underline; }
 }
 .pcard h4 { font-size: .9rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
 .pcard p { font-size: .835rem; color: #555; margin-bottom: 10px; line-height: 1.55; }
+.pcard-footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px; flex-wrap: wrap; }
 .tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag {
     background: #eff6ff;
@@ -136,6 +137,22 @@ a:hover { text-decoration: underline; }
     padding: 2px 8px;
     border-radius: 10px;
 }
+.gh-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #444;
+    background: #f1f3f5;
+    border: 1px solid #d8dde3;
+    border-radius: 6px;
+    padding: 3px 10px;
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+    flex-shrink: 0;
+}
+.gh-link:hover { background: #e2e8f0; color: #1a1a1a; text-decoration: none; }
 
 /* ── Other Projects ── */
 .proj-list { display: flex; flex-direction: column; gap: 30px; }
