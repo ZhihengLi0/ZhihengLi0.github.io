@@ -394,10 +394,13 @@ a:hover { text-decoration: underline; }
 .doc-link svg { width: 15px; height: 15px; flex-shrink: 0; }
 .billiards-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     margin: 14px 0 16px;
 }
+.bg-fig:nth-child(-n+2) { grid-column: span 3; }
+.bg-fig:nth-child(n+3):nth-child(-n+5) { grid-column: span 2; }
+.bg-fig:nth-child(n+6) { grid-column: span 3; }
 .bg-fig {
     margin: 0;
     cursor: pointer;
@@ -504,6 +507,9 @@ a:hover { text-decoration: underline; }
     .nav-links a { font-size: .7rem; letter-spacing: .04em; }
     .profile-inner { flex-direction: column; align-items: center; text-align: center; }
     .hero-links { justify-content: center; }
+    .billiards-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .billiards-gallery .bg-fig { grid-column: span 1; }
+    .bg-fig img { height: 112px; }
     .project-grid { grid-template-columns: 1fr; }
     .cert-grid { grid-template-columns: repeat(2, 1fr); }
     .skills-grid { grid-template-columns: 1fr; }
