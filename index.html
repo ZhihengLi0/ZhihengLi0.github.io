@@ -121,15 +121,17 @@
                 <div class="pe">
                     <div class="pe-head">
                         <span class="pe-title">BlueFors Database Migration &amp; Slack Alert System</span>
-                        <a class="gh-link" href="https://github.com/ZhihengLi0/column" target="_blank">⌥ GitHub</a>
+                        <a class="gh-link" href="https://github.com/ZhihengLi0/column_monitor" target="_blank">⌥ GitHub</a>
                     </div>
-                    <p>Independently migrated a 2.1 GB PostgreSQL database (8.25 M rows, 13 tables) from the BlueFors
-                        Windows control computer to a Linux server with a 12.7 TB external drive, resolving
-                        storage constraints via PostgreSQL data-directory relocation. Built an interactive Slack bot
-                        (BlueFors-Alert) integrated with the cs2 database that sends real-time alerts when
-                        refrigerator sensor values (temperature, pressure) exceed defined thresholds —
-                        and accepts commands directly in Slack to adjust thresholds, acknowledge alerts,
-                        and query sensor status without touching the server.</p>
+                    <p>Independently migrated and synchronized the BlueFors CS2 PostgreSQL system
+                        (~2.1 GB initial dump; 64 GB on-disk data directory; 12M+ rows, 13 tables)
+                        from the Windows control computer to a Raspberry Pi/Linux server with external storage,
+                        resolving storage constraints through PostgreSQL data-directory relocation and
+                        incremental PowerShell-based sync. Built BlueFors-Alert, an interactive Slack monitoring system with
+                        dual IDLE/COLD threshold logic, transition-state alert suppression, real-time
+                        temperature/pressure/flow alerts, command-based threshold overrides and acknowledgments,
+                        sensor status queries, and custom time-range plot generation with image upload directly
+                        to Slack.</p>
                     <div class="tags">
                         <span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Slack API</span><span class="tag">Linux / Raspberry Pi</span>
                     </div>
@@ -518,7 +520,7 @@
             </li>
             <li class="news-item">
                 <span class="nd">Jun 2026</span>
-                <span>Completed migration of the 2.1 GB BlueFors CS2 PostgreSQL database (12 M+ rows, 13 tables) to a 12.7 TB Linux server and authored full database documentation.</span>
+                <span>Completed migration of the BlueFors CS2 PostgreSQL system (~2.1 GB initial dump; 64 GB on-disk data directory; 12M+ rows, 13 tables) to a 12.7 TB Linux server and authored full database documentation.</span>
             </li>
             <li class="news-item">
                 <span class="nd">May 2026</span>
