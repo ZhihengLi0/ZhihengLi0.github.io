@@ -136,16 +136,19 @@
                 <div class="pe">
                     <div class="pe-head">
                         <span class="pe-title">SNOLAB R4 Phonon Pulse Template Generation</span>
-                        <span class="badge">May – Jun 2026</span>
+                        <span class="badge">May – Jul 2026</span>
                         <a class="gh-link" href="https://github.com/ZhihengLi0/urop/tree/main/snolab" target="_blank">⌥ GitHub</a>
                     </div>
-                    <p>Generated 1×1 and N×M phonon pulse templates for 8 SuperCDMS SNOLAB R4 Ge detectors
-                        (up to 12 phonon channels each — the channel count varies per detector) using freshly acquired calibration data
-                        under the Prompt_V07-02_C0.4.5 production tag. Implemented 4-exponential model fitting,
-                        PCA-based N×M component extraction, and ROOT file output for downstream optimal filter
-                        reprocessing by the analysis team.</p>
+                    <p>Built the full phonon pulse template pipeline for <strong>13 SuperCDMS SNOLAB R4
+                        detectors</strong> (12 phonon channels each) from freshly acquired calibration data under the
+                        Prompt_V07-02_C0.4.5 production tag: selected events around the 10.37 keV K-shell
+                        activation line, cached <strong>~120 GB</strong> of raw traces with resumable per-detector
+                        SLURM jobs on the MSI cluster, fitted every trace with a free-pretrigger 2-exponential
+                        model with per-trace quality diagnostics, and constructed both analytic 1×1 and
+                        PCA-based N×M templates — delivered as ROOT files in the collaboration's official
+                        PulseTemplates format for downstream optimal-filter reprocessing.</p>
                     <div class="tags">
-                        <span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">ROOT</span><span class="tag">PCA</span><span class="tag">Signal Processing</span>
+                        <span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">ROOT</span><span class="tag">PCA</span><span class="tag">Signal Processing</span><span class="tag">SLURM / MSI HPC</span>
                     </div>
                 </div>
 
@@ -534,6 +537,10 @@
         <h2 class="section-title">News</h2>
         <div class="news-scroll">
         <ul class="news-list">
+            <li class="news-item">
+                <span class="nd">Jul 2026</span>
+                <span>Completed the final SNOLAB R4 phonon pulse template production for <strong>all 13 detectors</strong> — free-pretrigger 2-exponential fits, PCA-based N×M templates, delivered in the official PulseTemplates ROOT format.</span>
+            </li>
             <li class="news-item">
                 <span class="nd">Jul 2026</span>
                 <span>Presented <strong>cdms_spotlight</strong> to the international collaboration at the <strong>SuperCDMS Software Meeting</strong> on July 14, 2026 — a self-learning natural-language query system for the SNOLAB DQM database, now running <strong>24/7 in the official SuperCDMS Slack workspace</strong> and pip-installable from GitHub.</span>
