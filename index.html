@@ -155,7 +155,7 @@
                 <div class="pe">
                     <div class="pe-head">
                         <span class="pe-title">BlueFors Database Migration &amp; Slack Alert System</span>
-                        <span class="badge">May – Jun 2026</span>
+                        <span class="badge">May – Jul 2026</span>
                         <a class="gh-link" href="https://github.com/ZhihengLi0/column_monitor" target="_blank">⌥ GitHub</a>
                     </div>
                     <p>Independently migrated and synchronized the BlueFors CS2 PostgreSQL system
@@ -166,9 +166,12 @@
                         dual IDLE/COLD threshold logic, transition-state alert suppression, real-time
                         temperature/pressure/flow alerts, command-based threshold overrides and acknowledgments,
                         sensor status queries, and custom time-range plot generation with image upload directly
-                        to Slack.</p>
+                        to Slack. In July 2026 extended the platform to a second instrument — an Arduino-read
+                        liquid-nitrogen scale (<a href="https://github.com/ZhihengLi0/ln2_monitor" target="_blank">ln2_monitor</a>):
+                        cron-driven ingestion into its own PostgreSQL database, weight/temperature/staleness
+                        alerts, and natural-language status queries and plots through the same shared Slack bot.</p>
                     <div class="tags">
-                        <span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Slack API</span><span class="tag">Linux / Raspberry Pi</span>
+                        <span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Slack API</span><span class="tag">Linux / Raspberry Pi</span><span class="tag">Arduino</span>
                     </div>
                 </div>
 
@@ -537,6 +540,10 @@
         <h2 class="section-title">News</h2>
         <div class="news-scroll">
         <ul class="news-list">
+            <li class="news-item">
+                <span class="nd">Jul 2026</span>
+                <span>Extended the lab's Slack monitoring platform to a second instrument: <strong>ln2_monitor</strong>, real-time liquid-nitrogen scale monitoring (Arduino → PostgreSQL → Slack) sharing the BlueFors alert bot.</span>
+            </li>
             <li class="news-item">
                 <span class="nd">Jul 2026</span>
                 <span>Completed the final SNOLAB R4 phonon pulse template production for <strong>all 13 detectors</strong> — free-pretrigger 2-exponential fits, PCA-based N×M templates, delivered in the official PulseTemplates ROOT format.</span>
