@@ -71,7 +71,8 @@
             under Prof. Yan Liu (School of Physics &amp; Astronomy).
             My work spans hardware, software, and data analysis for dark matter detection —
             from hands-on cryogenic instrumentation to building data pipelines,
-            signal-processing workflows, and real-time monitoring systems.
+            signal-processing workflows, real-time monitoring systems, and a
+            natural-language data-query tool serving the international SuperCDMS collaboration.
         </p>
         <div class="skills-block">
             <div class="skills-row">
@@ -103,6 +104,33 @@
         <p class="rc-role">Undergraduate Research Assistant &amp; UROP Fellow &nbsp;·&nbsp; Advisor: <a href="https://cse.umn.edu/physics/yan-liu">Prof. Yan Liu</a> &nbsp;·&nbsp; Postdoctoral Mentor: <a href="https://cse.umn.edu/physics/shubham-pandey">Shubham Pandey</a></p>
 
         <div class="pe-list">
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">cdms_spotlight — Natural-Language Query System for SuperCDMS SNOLAB Data</span>
+                        <a class="gh-link" href="https://github.com/ZhihengLi0/cdms_spotlight" target="_blank">⌥ GitHub</a>
+                    </div>
+                    <p>Designed and built <strong>cdms_spotlight</strong>, a natural-language interface to the
+                        SuperCDMS SNOLAB data-quality (DQM) database at SLAC: physicists ask in plain language
+                        — <em>"which series after June 28 had detector 15 at 90 volts?"</em>, in English, Chinese,
+                        French, Spanish, or Hindi — and receive matching data-taking series, any of the
+                        <strong>10,929 detector/DAQ parameters</strong> per series, and CSV exports within seconds.
+                        Metadata filtering is pushed server-side to scale from ~1,300 series today to the planned
+                        ~100,000; parameter cuts the server cannot perform are checked client-side against each
+                        run's ODB snapshot with per-detector caching and asynchronous background scans. The language
+                        layer is fully local and <strong>self-learning</strong> (TF-IDF character n-grams + logistic
+                        regression; confirmed corrections are remembered permanently), and no query executes without
+                        user confirmation. Deployed <strong>24/7 in the official SuperCDMS collaboration Slack
+                        workspace</strong> — with an auto-updating watchdog, graceful restarts, quota-managed
+                        background export jobs, and periodic data-taking reports — and as a pip-installable
+                        package and Python library with six documentation files. It replaces the previous manual
+                        practice, in which a comparable parameter log for a single detector test took three
+                        undergraduates and a postdoc about three months of hand-copied spreadsheets. Presented
+                        to the collaboration at the SuperCDMS Software Meeting (July 2026).</p>
+                    <div class="tags">
+                        <span class="tag">Python</span><span class="tag">NLP / scikit-learn</span><span class="tag">REST API</span><span class="tag">Slack API</span><span class="tag">Databases</span><span class="tag">Deployment / DevOps</span>
+                    </div>
+                </div>
+
                 <div class="pe">
                     <div class="pe-head">
                         <span class="pe-title">SNOLAB R4 Phonon Pulse Template Generation</span>
@@ -498,6 +526,10 @@
         <h2 class="section-title">News</h2>
         <div class="news-scroll">
         <ul class="news-list">
+            <li class="news-item">
+                <span class="nd">Jul 2026</span>
+                <span>Presented <strong>cdms_spotlight</strong> at the SuperCDMS Software Meeting — a self-learning natural-language query system for the SNOLAB DQM database, now running <strong>24/7 in the official SuperCDMS Slack workspace</strong> and pip-installable from GitHub.</span>
+            </li>
             <li class="news-item">
                 <span class="nd">Jun 2026</span>
                 <span>Volunteered as a ball retriever for the tennis division at the <strong>Special Olympics USA Games Minnesota 2026</strong>, hosted at the University of Minnesota.</span>
