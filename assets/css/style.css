@@ -216,6 +216,8 @@ a:hover { text-decoration: underline; }
     margin-bottom: 7px;
 }
 .pe-title { font-size: 1rem; font-weight: 700; color: #1a1a1a; }
+.pe-head .badge { margin-left: auto; flex-shrink: 0; }
+.pe-head .pe-title + .badge + .gh-link, .pe-head .badge ~ .gh-link { margin-left: 0; }
 .pe p { font-size: .9375rem; color: #444; line-height: 1.75; margin-bottom: 8px; text-align: justify; }
 .pe-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
 .tags { display: flex; flex-wrap: wrap; gap: 5px; }
