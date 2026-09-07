@@ -220,6 +220,7 @@ a:hover { text-decoration: underline; }
 .pe-head .pe-title + .badge + .gh-link, .pe-head .badge ~ .gh-link { margin-left: 0; }
 .pe p { font-size: .9375rem; color: #444; line-height: 1.75; margin-bottom: 8px; text-align: justify; }
 .pe-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.pe-links { display: flex; flex-wrap: wrap; gap: 6px; }
 .tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag {
     background: #eff6ff;
