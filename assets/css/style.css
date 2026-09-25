@@ -219,6 +219,12 @@ a:hover { text-decoration: underline; }
 .pe-head .badge { margin-left: auto; flex-shrink: 0; }
 .pe-head .pe-title + .badge + .gh-link, .pe-head .badge ~ .gh-link { margin-left: 0; }
 .pe p { font-size: .9375rem; color: #444; line-height: 1.75; margin-bottom: 8px; text-align: justify; }
+.pe-sub { list-style: disc; padding-left: 20px; margin: 4px 0 10px; }
+.pe-sub li { margin-bottom: 6px; }
+.pe-sub li::marker { color: #1d4ed8; }
+.pe-sub-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+.pe-sub-title { font-size: .95rem; font-weight: 600; color: #1a1a1a; }
+.pe-sub-date { font-size: .8rem; color: #666; }
 .pe-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
 .pe-links { display: flex; flex-wrap: wrap; gap: 6px; }
 .tags { display: flex; flex-wrap: wrap; gap: 5px; }

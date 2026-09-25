@@ -147,9 +147,15 @@
 
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">SNOLAB R4 Phonon Pulse Template Generation</span>
-                        <span class="badge">May – Jul 2026</span>
+                        <span class="pe-title">SNOLAB R4 Phonon Pulse Analysis</span>
+                        <span class="badge">May – Sep 2026</span>
                         <a class="gh-link" href="https://github.com/ZhihengLi0/urop/tree/main/snolab" target="_blank">↗ GitHub</a>
+                    </div>
+                    <ul class="pe-sub">
+                    <li>
+                    <div class="pe-sub-head">
+                        <span class="pe-sub-title">Phonon Pulse Template Generation</span>
+                        <span class="pe-sub-date">May – Jul 2026</span>
                     </div>
                     <p>Built the full phonon pulse template pipeline for <strong>13 SuperCDMS SNOLAB R4
                         detectors</strong> (12 phonon channels each) from freshly acquired calibration data under the
@@ -159,8 +165,30 @@
                         model with per-trace quality diagnostics, and constructed both analytic 1×1 and
                         PCA-based N×M templates — delivered as ROOT files in the collaboration's official
                         PulseTemplates format and used as the R4 pulse templates for the optimal-filter reprocessing.</p>
+                    </li>
+                    <li>
+                    <div class="pe-sub-head">
+                        <span class="pe-sub-title">Phonon Collection Efficiency Analysis</span>
+                        <span class="pe-sub-date">Jul – Sep 2026</span>
+                        <a class="gh-link" href="https://github.com/ZhihengLi0/urop/tree/main/snolab/collection_efficiency" target="_blank">↗ GitHub</a>
+                    </div>
+                    <p>Measured how much of a 10.37 keV K-shell event's energy is absorbed by the TESs of
+                        detector <strong>Z7</strong>. The recorded trace is a current, and its area is a charge,
+                        not an energy, so I worked out the current-to-power conversion from the two coupled TES
+                        electrothermal differential equations,
+                        δP = I₀(R<sub>L</sub> − R₀)·δI + 2R<sub>L</sub>·(δI)², with each channel's bias point
+                        taken from the detector configuration, and validated the chain by reproducing the
+                        official absorbed-energy RQ. Each pulse is fitted with a two-exponential model and its power
+                        is integrated in closed form, which removes the integration-window and baseline-drift
+                        dependence of integrating the raw trace. Applied to every K-line event in every channel,
+                        this showed that a single channel's energy is broadened mainly by event position, and that
+                        summing the channels removes most of it — yielding the detector's collection efficiency
+                        without any fitted relative-calibration factors. Presented at the <strong>SuperCDMS Analysis
+                        Working Group meeting</strong> in September 2026.</p>
+                    </li>
+                    </ul>
                     <div class="tags">
-                        <span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">ROOT</span><span class="tag">PCA</span><span class="tag">Signal Processing</span><span class="tag">SLURM / MSI HPC</span>
+                        <span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">ROOT</span><span class="tag">PCA</span><span class="tag">Signal Processing</span><span class="tag">TES Physics</span><span class="tag">SLURM / MSI HPC</span>
                     </div>
                 </div>
 
