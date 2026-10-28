@@ -299,46 +299,46 @@
             <span class="badge">Aug 2026 – Present</span>
         </div>
         <p class="rc-sub">Deisseroth &amp; Mitra Labs, Department of Psychiatry, Stanford University &nbsp;·&nbsp; remote from Minneapolis</p>
-        <p class="rc-role">Research Collaborator &nbsp;·&nbsp; with Kaiwen Sheng, Ph.D. student in Bioengineering</p>
+        <p class="rc-role">Research Collaborator &nbsp;·&nbsp; with Kaiwen Sheng, Ph.D. student in Bioengineering &nbsp;·&nbsp; <a href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html" target="_blank">project page</a> (every step, with figures) &nbsp;·&nbsp; <a href="https://github.com/ZhihengLi0/mouse-behavior-tracking" target="_blank">code</a></p>
 
         <div class="pe-list">
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">Eye Tracking with DeepLabCut: the Workflow Around the Tracker</span>
+                        <span class="pe-title">1 · Fixing the recipe: batch size, backbone, which frames to correct</span>
                         <span class="badge">Aug – Sep 2026</span>
-                        <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">↗ Project page</a>
-                        <a class="gh-link" href="https://github.com/ZhihengLi0/mouse-behavior-tracking" target="_blank">↗ Code</a>
+                        <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s1" target="_blank">↗ Steps 1–4</a>
                     </div>
-                    <p>Eight keypoints on a mouse eye — the four endpoints of the pupil ellipse, upper and lower eyelid,
-                        nasal and temporal corner — are tracked with <strong>DeepLabCut</strong> (an existing tool, PyTorch
-                        engine) in infrared videos of ~57,000 frames each. What I built is the <strong>workflow around the
-                        tracker</strong>: a fixed protocol for labeling, training and evaluating every new video (model-free
-                        frame selection, model pre-labels corrected by hand, per-video training and scoring on frozen test
-                        sets, back-tests of every model on every earlier video), and pupil size, eye opening and blinks
-                        derived frame by frame <strong>without temporal smoothing</strong>, so that the series can be aligned
-                        with simultaneous brain recordings. Raw videos, labels and model weights stay local; the public
-                        repository carries the code, the documentation and audited aggregate results, and a
-                        <strong>bilingual project page</strong> (Chinese and English) is rebuilt from them on every push.</p>
+                    <p>Eight points on a mouse eye — the pupil as an ellipse, the two eyelids, the two corners — are tracked
+                        with <strong>DeepLabCut</strong>, an existing tool, in infrared videos of about twenty minutes, one per
+                        day over consecutive days, for three mice. The aim is a pupil-size and blink series that can be laid
+                        next to the brain recordings of the same session. On the first video I fixed the training recipe by
+                        controlled experiments, with test frames that never enter any choice: the <strong>batch size</strong>
+                        (the candidates could not be told apart on the test error, so the one with the lowest validation
+                        loss was kept), the <strong>backbone</strong> (ResNet-50, the lowest test error and the most confident
+                        points among five), and the <strong>rule that picks frames for correction</strong> — uncertainty,
+                        jump and trajectory-fit detectors were run side by side for many rounds and ended at the same error,
+                        so the simplest one, the jump rule, was kept. The definition of every keypoint was then written
+                        down and all earlier frames relabeled under it.</p>
                     <div class="tags">
-                        <span class="tag">DeepLabCut</span><span class="tag">PyTorch</span><span class="tag">Computer Vision</span><span class="tag">Neuroscience</span>
+                        <span class="tag">DeepLabCut</span><span class="tag">PyTorch</span><span class="tag">Controlled Experiments</span><span class="tag">Computer Vision</span>
                     </div>
                 </div>
 
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">How Many Labels Does a New Video Need?</span>
+                        <span class="pe-title">2 · Active learning over 19 videos: how many labels does a new day need?</span>
                         <span class="badge">Sep – Oct 2026</span>
-                        <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s5" target="_blank">↗ Results (English page)</a>
+                        <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s5" target="_blank">↗ Steps 5–11</a>
                     </div>
-                    <p>The engineering question behind the collaboration: on a new recording day, how many human labels
-                        are needed before the model is good enough? Every video goes through the same loop — pre-label
-                        with the previous video's model, correct, retrain, pick the next 20 frames where the tracking
-                        jumps, and stop when two consecutive 20-label steps improve the test error by at most 3 %.
-                        Across <strong>19 videos from 3 mice</strong>, 16 videos reached their plateau with
-                        <strong>≤ 40 labels</strong> (median per-frame error 3–25 px on frozen 50-frame test sets;
-                        820 labels in total); a side study retrains every video with 5 and 10 labels to find the
-                        smallest batch that works. Every number on the report page comes from one script and one
-                        formula, and every step is committed as it happens.</p>
+                    <p>The question behind the collaboration: on a new recording day, how many human labels are needed before
+                        the model is good enough? Every video goes through the same loop — pre-label with the previous
+                        day's model, correct by hand, retrain, pick the next frames where the tracking jumps, and stop when
+                        two more steps of 20 labels no longer improve the test error; only the labels up to that point are
+                        carried into later days, as in real use. Across <strong>19 videos from 3 mice</strong>, most days
+                        settled at <strong>20–40 labels</strong>, two needed none, and models trained on later days did not
+                        get worse on earlier ones. From the tracked points, pupil size, eye opening and blinks are derived
+                        frame by frame <strong>without temporal smoothing</strong>. Every number on the project page comes
+                        from one script and one formula, and every step is committed as it happens.</p>
                     <div class="tags">
                         <span class="tag">Active Learning</span><span class="tag">Label Efficiency</span><span class="tag">Experiment Design</span><span class="tag">Reproducibility</span>
                     </div>
@@ -346,12 +346,12 @@
 
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">Finding and Repairing Unreliable Frames</span>
+                        <span class="pe-title">3 · Finding and repairing the frames that cannot be trusted</span>
                         <span class="badge">Oct 2026 – ongoing</span>
                     </div>
-                    <p>Currently developing a label-free time-series detector for the frames whose tracking cannot be
-                        trusted, and a repair rule that changes only the flagged frames, so that human correction stays
-                        minimal and no smoothing enters the signal that is aligned with the brain recordings.</p>
+                    <p>Current work: finding the frames whose tracking cannot be trusted without asking for new labels, from the
+                        time series of the points themselves, and repairing only those frames, so that the human effort
+                        stays small and no smoothing enters the signal that is aligned with the brain recordings.</p>
                     <div class="tags">
                         <span class="tag">Time Series</span><span class="tag">Anomaly Detection</span>
                     </div>
@@ -675,7 +675,7 @@
         <ul class="news-list">
             <li class="news-item">
                 <span class="nd">Oct 2026</span>
-                <span>The <strong>mouse eye tracking</strong> report page went online (<a href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">Chinese and English</a>): all 19 videos from 3 mice processed with the same protocol, 16 of them reaching their plateau with ≤ 40 human labels; the work now turns to finding and repairing the frames that cannot be trusted.</span>
+                <span>The <strong>mouse eye tracking</strong> report page went online (<a href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">Chinese and English</a>): all 19 videos from 3 mice, recorded on consecutive days, went through the same protocol, and most days needed only 20–40 human labels; the work now turns to finding and repairing the frames that cannot be trusted.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Sep 2026</span>
