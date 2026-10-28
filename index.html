@@ -304,18 +304,21 @@
         <div class="pe-list">
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">DeepLabCut Keypoint Pipeline &amp; Report Page</span>
+                        <span class="pe-title">Eye Tracking with DeepLabCut: the Workflow Around the Tracker</span>
                         <span class="badge">Aug – Sep 2026</span>
                         <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">↗ Project page</a>
                         <a class="gh-link" href="https://github.com/ZhihengLi0/mouse-behavior-tracking" target="_blank">↗ Code</a>
                     </div>
-                    <p>Built a reproducible <strong>DeepLabCut (PyTorch) pipeline</strong> that tracks eight keypoints on a
-                        mouse eye — the four endpoints of the pupil ellipse, upper and lower eyelid, nasal and temporal
-                        corner — in infrared videos of ~57,000 frames each, and derives pupil size, eye opening and blinks
-                        frame by frame and <strong>without temporal smoothing</strong>, so that the series can be aligned
+                    <p>Eight keypoints on a mouse eye — the four endpoints of the pupil ellipse, upper and lower eyelid,
+                        nasal and temporal corner — are tracked with <strong>DeepLabCut</strong> (an existing tool, PyTorch
+                        engine) in infrared videos of ~57,000 frames each. What I built is the <strong>workflow around the
+                        tracker</strong>: a fixed protocol for labeling, training and evaluating every new video (model-free
+                        frame selection, model pre-labels corrected by hand, per-video training and scoring on frozen test
+                        sets, back-tests of every model on every earlier video), and pupil size, eye opening and blinks
+                        derived frame by frame <strong>without temporal smoothing</strong>, so that the series can be aligned
                         with simultaneous brain recordings. Raw videos, labels and model weights stay local; the public
                         repository carries the code, the documentation and audited aggregate results, and a
-                        <strong>bilingual report page</strong> (Chinese and English) is rebuilt from them on every push.</p>
+                        <strong>bilingual project page</strong> (Chinese and English) is rebuilt from them on every push.</p>
                     <div class="tags">
                         <span class="tag">DeepLabCut</span><span class="tag">PyTorch</span><span class="tag">Computer Vision</span><span class="tag">Neuroscience</span>
                     </div>
@@ -672,7 +675,7 @@
         <ul class="news-list">
             <li class="news-item">
                 <span class="nd">Oct 2026</span>
-                <span>The <strong>mouse eye tracking</strong> report page went online (<a href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">Chinese and English</a>): all 19 videos from 3 mice processed with one DeepLabCut pipeline, 16 of them reaching their plateau with ≤ 40 human labels; the work now turns to finding and repairing the frames that cannot be trusted.</span>
+                <span>The <strong>mouse eye tracking</strong> report page went online (<a href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">Chinese and English</a>): all 19 videos from 3 mice processed with the same protocol, 16 of them reaching their plateau with ≤ 40 human labels; the work now turns to finding and repairing the frames that cannot be trusted.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Sep 2026</span>
@@ -688,7 +691,7 @@
             </li>
             <li class="news-item">
                 <span class="nd">Aug 2026</span>
-                <span>Started a remote collaboration with <strong>Kaiwen Sheng (Deisseroth &amp; Mitra labs, Stanford)</strong>: a DeepLabCut pipeline that tracks eight keypoints on the mouse eye for alignment with brain recordings, with weekly meetings and a public repository from day one.</span>
+                <span>Started a remote collaboration with <strong>Kaiwen Sheng (Deisseroth &amp; Mitra labs, Stanford)</strong>: tracking eight keypoints on the mouse eye with DeepLabCut, and building the labeling, training and evaluation workflow around it, for alignment with brain recordings — weekly meetings and a public repository from day one.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Jul 2026</span>
