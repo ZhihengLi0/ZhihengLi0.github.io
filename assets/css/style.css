@@ -173,6 +173,8 @@ a:hover { text-decoration: underline; }
     padding-left: 14px;
     border-left: 4px solid #1a3a6b;
 }
+.rc-header-next { margin-top: 44px; padding-top: 28px; border-top: 1px solid #e3e3e3; }
+
 .rc-header h3 {
     font-family: 'Merriweather', Georgia, serif;
     font-size: 1.3rem;

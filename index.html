@@ -56,7 +56,7 @@
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
                     GitHub
                 </a>
-                <a class="icon-link" href="assets/CV_ZhihengLi_20260924.pdf" target="_blank" data-tip="Curriculum Vitae">
+                <a class="icon-link" href="assets/CV_ZhihengLi_20261028.pdf" target="_blank" data-tip="Curriculum Vitae">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
                     CV
                 </a>
@@ -74,7 +74,9 @@
             <strong>Mathematics</strong> with a minor in <strong>Computer Science</strong>
             (GPA 4.0/4.0, Dean's List). Research is one part of my time here: I work in the
             <a href="https://cdms.umn.edu/">SuperCDMS Dark Matter Experiment</a>
-            under Prof. Yan Liu as an Undergraduate Research Assistant and UROP Fellow —
+            under Prof. Yan Liu as an Undergraduate Research Assistant and UROP Fellow, and since
+            August 2026 I also work remotely with the Deisseroth &amp; Mitra labs at Stanford on tracking
+            mouse eye behaviour for alignment with brain recordings —
             the individual projects are detailed <a href="#research">below</a>.
             Outside the lab, I tutor Calculus I as a volunteer with the Chinese Students &amp;
             Scholars Association, volunteered at the 2026 Special Olympics USA Games, and
@@ -89,7 +91,7 @@
             </div>
             <div class="skills-row">
                 <span class="skills-label">Tools</span>
-                <span class="skills-val">Git / GitHub &nbsp;·&nbsp; Jupyter &nbsp;·&nbsp; ROOT &nbsp;·&nbsp; Linux &nbsp;·&nbsp; Slurm &nbsp;·&nbsp; HPC (MSI Agate)</span>
+                <span class="skills-val">Git / GitHub &nbsp;·&nbsp; Jupyter &nbsp;·&nbsp; DeepLabCut / PyTorch &nbsp;·&nbsp; ROOT &nbsp;·&nbsp; Linux &nbsp;·&nbsp; Slurm &nbsp;·&nbsp; HPC (MSI Agate)</span>
             </div>
             <div class="skills-row">
                 <span class="skills-label">Applied Algorithms</span>
@@ -288,6 +290,66 @@
                         decomposition — a direction confirmed to be active in signal-processing research.</p>
                     <div class="tags">
                         <span class="tag">Signal Processing</span><span class="tag">Fourier Analysis</span><span class="tag">Mathematics</span>
+                    </div>
+                </div>
+            </div>
+
+        <div class="rc-header rc-header-next">
+            <h3>Mouse Eye Tracking for Neural Alignment</h3>
+            <span class="badge">Aug 2026 – Present</span>
+        </div>
+        <p class="rc-sub">Deisseroth &amp; Mitra Labs, Department of Psychiatry, Stanford University &nbsp;·&nbsp; remote from Minneapolis</p>
+        <p class="rc-role">Research Collaborator &nbsp;·&nbsp; with Kaiwen Sheng, Ph.D. student in Bioengineering</p>
+
+        <div class="pe-list">
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">DeepLabCut Keypoint Pipeline &amp; Report Page</span>
+                        <span class="badge">Aug – Sep 2026</span>
+                        <a class="gh-link" href="https://github.com/ZhihengLi0/mouse-behavior-tracking" target="_blank">↗ GitHub</a>
+                        <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">↗ Report page</a>
+                    </div>
+                    <p>Built a reproducible <strong>DeepLabCut (PyTorch) pipeline</strong> that tracks eight keypoints on a
+                        mouse eye — the four endpoints of the pupil ellipse, upper and lower eyelid, nasal and temporal
+                        corner — in infrared videos of ~57,000 frames each, and derives pupil size, eye opening and blinks
+                        frame by frame and <strong>without temporal smoothing</strong>, so that the series can be aligned
+                        with simultaneous brain recordings. Raw videos, labels and model weights stay local; the public
+                        repository carries the code, the documentation and audited aggregate results, and a
+                        <strong>bilingual report page</strong> (Chinese and English) is rebuilt from them on every push.</p>
+                    <div class="tags">
+                        <span class="tag">DeepLabCut</span><span class="tag">PyTorch</span><span class="tag">Computer Vision</span><span class="tag">Neuroscience</span>
+                    </div>
+                </div>
+
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">How Many Labels Does a New Video Need?</span>
+                        <span class="badge">Sep – Oct 2026</span>
+                    </div>
+                    <p>The engineering question behind the collaboration: on a new recording day, how many human labels
+                        are needed before the model is good enough? Every video goes through the same loop — pre-label
+                        with the previous video's model, correct, retrain, pick the next 20 frames where the tracking
+                        jumps, and stop when two consecutive 20-label steps improve the test error by at most 3 %.
+                        Across <strong>19 videos from 3 mice</strong>, 16 videos reached their plateau with
+                        <strong>≤ 40 labels</strong> (median per-frame error 3–25 px on frozen 50-frame test sets;
+                        820 labels in total); a side study retrains every video with 5 and 10 labels to find the
+                        smallest batch that works. Every number on the report page comes from one script and one
+                        formula, and every step is committed as it happens.</p>
+                    <div class="tags">
+                        <span class="tag">Active Learning</span><span class="tag">Label Efficiency</span><span class="tag">Experiment Design</span><span class="tag">Reproducibility</span>
+                    </div>
+                </div>
+
+                <div class="pe">
+                    <div class="pe-head">
+                        <span class="pe-title">Finding and Repairing Unreliable Frames</span>
+                        <span class="badge">Oct 2026 – ongoing</span>
+                    </div>
+                    <p>Currently developing a label-free time-series detector for the frames whose tracking cannot be
+                        trusted, and a repair rule that changes only the flagged frames, so that human correction stays
+                        minimal and no smoothing enters the signal that is aligned with the brain recordings.</p>
+                    <div class="tags">
+                        <span class="tag">Time Series</span><span class="tag">Anomaly Detection</span>
                     </div>
                 </div>
             </div>
@@ -608,6 +670,10 @@
         <div class="news-scroll">
         <ul class="news-list">
             <li class="news-item">
+                <span class="nd">Oct 2026</span>
+                <span>The <strong>mouse eye tracking</strong> report page went online (<a href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">Chinese and English</a>): all 19 videos from 3 mice processed with one DeepLabCut pipeline, 16 of them reaching their plateau with ≤ 40 human labels; the work now turns to finding and repairing the frames that cannot be trusted.</span>
+            </li>
+            <li class="news-item">
                 <span class="nd">Sep 2026</span>
                 <span>Presented the <strong>phonon collection efficiency analysis of SNOLAB R4 detector Z7</strong> to the <strong>SuperCDMS Analysis Working Group</strong> on September 23, 2026 — every K-line pulse converted from current to power with the TES electrothermal equations and integrated in closed form.</span>
             </li>
@@ -618,6 +684,10 @@
             <li class="news-item">
                 <span class="nd">Aug 2026</span>
                 <span>Developed a Python prototype for industrial time-series data quality governance, covering cumulative-value anomalies, missing-data imputation, communication interruptions, real-time point-wise cleaning, and multi-day validation.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Aug 2026</span>
+                <span>Started a remote collaboration with <strong>Kaiwen Sheng (Deisseroth &amp; Mitra labs, Stanford)</strong>: a DeepLabCut pipeline that tracks eight keypoints on the mouse eye for alignment with brain recordings, with weekly meetings and a public repository from day one.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Jul 2026</span>
