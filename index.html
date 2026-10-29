@@ -310,8 +310,9 @@
                     </div>
                     <p>Eight points on a mouse eye are tracked with <strong>DeepLabCut</strong>, an existing tool, in
                         infrared videos of about twenty minutes, recorded over multiple days, for three mice: the pupil as
-                        an ellipse, the two eyelids and the two corners. The aim is a pupil-size and blink series that can
-                        be laid next to the brain recordings of the same session. On the first video I fixed the training
+                        an ellipse, the two eyelids and the two corners. The aim is a labeling and training recipe that can
+                        be used at scale and gives the most accurate predictions, so that blinks and pupil area can
+                        then be read off and aligned with the neural signals of the mouse brain. On the first video I fixed the training
                         recipe by controlled experiments, with test frames that never enter any choice: the
                         <strong>batch size</strong>, the <strong>backbone</strong>, settled on ResNet-50, and the
                         <strong>rule that picks frames for correction</strong>, settled on the jump rule because it did
