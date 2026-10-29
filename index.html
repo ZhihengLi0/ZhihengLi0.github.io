@@ -361,9 +361,7 @@
                         as an ellipse through the four pupil points, I compared nine rules for computing the area from
                         the model's points: the same four-point ellipse, rules that leave out one of the four points,
                         rules that drop the point with the lowest confidence, and the four-point area followed by a
-                        median filter over time. The four-point rule had the lowest error and was kept; a median filter
-                        did not help, because the errors come in runs of neighbouring frames rather than as single
-                        outliers. Blinks next, as a static rule, one frame at a time, open or not open. From each video
+                        median filter over time. The four-point rule had the lowest error and was kept. Blinks next, as a static rule, one frame at a time, open or not open. From each video
                         frames were drawn at random across the range of eye opening and judged by eye, with no numbers
                         shown. The eye opening is the pixel distance between the two eyelid points; since the camera and
                         the mouse's position are fixed from day to day, this distance can be compared across days
