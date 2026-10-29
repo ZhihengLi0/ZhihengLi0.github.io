@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zhiheng Li — Mathematics student and undergraduate researcher (SuperCDMS Dark Matter Experiment) at the University of Minnesota, Twin Cities.">
+    <meta name="description" content="Zhiheng Li, Mathematics student and undergraduate researcher (SuperCDMS Dark Matter Experiment) at the University of Minnesota, Twin Cities.">
     <title>Zhiheng Li</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta property="og:title" content="Zhiheng Li">
@@ -76,7 +76,7 @@
             <a href="https://cdms.umn.edu/">SuperCDMS Dark Matter Experiment</a>
             under Prof. Yan Liu as an Undergraduate Research Assistant and UROP Fellow, and since
             August 2026 I also work remotely with the Deisseroth &amp; Mitra labs at Stanford on tracking
-            mouse eye behaviour for alignment with brain recordings —
+            mouse eye behaviour for alignment with brain recordings;
             the individual projects are detailed <a href="#research">below</a>. This semester I am also
             reading <em>Measure and Integral: An Introduction to Real Analysis</em> (Wheeden &amp; Zygmund,
             2nd ed.) in the UMN Directed Reading Program, with Anisha Jain, a Ph.D. student in Mathematics,
@@ -84,8 +84,8 @@
             Outside the lab, I tutor Calculus I as a volunteer with the Chinese Students &amp;
             Scholars Association, volunteered at the 2026 Special Olympics USA Games, and
             earlier led a student team that designed a new billiards rest, now patent-pending
-            (see <a href="#projects">Projects</a>). An hour of exercise a day — soccer,
-            table tennis, billiards — is how I decompress.
+            (see <a href="#projects">Projects</a>). I like working out: an hour a day at the gym,
+            or playing soccer, table tennis or billiards, is how I decompress.
         </p>
         <div class="skills-block">
             <div class="skills-row">
@@ -102,7 +102,7 @@
             </div>
             <div class="skills-row">
                 <span class="skills-label">Languages</span>
-                <span class="skills-val">Chinese (native) &nbsp;·&nbsp; English — IELTS 7.0 &nbsp;·&nbsp; CET-4 &amp; CET-6 certified</span>
+                <span class="skills-val">Chinese (native) &nbsp;·&nbsp; English (IELTS 7.0) &nbsp;·&nbsp; CET-4 &amp; CET-6 certified</span>
             </div>
         </div>
     </div>
@@ -123,14 +123,14 @@
         <div class="pe-list">
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">cdms_spotlight — Natural-Language Query System for SuperCDMS SNOLAB Data</span>
+                        <span class="pe-title">cdms_spotlight: Natural-Language Query System for SuperCDMS SNOLAB Data</span>
                         <span class="badge">Jul 2026</span>
                         <a class="gh-link" href="https://github.com/ZhihengLi0/cdms_spotlight" target="_blank">↗ GitHub</a>
                     </div>
                     <p>Designed and built <strong>cdms_spotlight</strong>, a natural-language interface to the
-                        SuperCDMS SNOLAB data-quality (DQM) database hosted at SLAC: physicists ask in plain language
-                        — <em>"which series after June 28 had detector 15 at 90 volts?"</em>, in English, Chinese,
-                        French, Spanish, or Hindi — and receive matching data-taking series, any of the
+                        SuperCDMS SNOLAB data-quality (DQM) database hosted at SLAC: physicists ask in plain language,
+                        for example <em>"which series after June 28 had detector 15 at 90 volts?"</em>, in English, Chinese,
+                        French, Spanish, or Hindi, and receive matching data-taking series, any of the
                         <strong>10,929 detector/DAQ parameters</strong> per series, and CSV exports within seconds.
                         Metadata filtering is pushed server-side to scale from ~1,300 series today to the planned
                         ~100,000; parameter cuts the server cannot perform are checked client-side against each
@@ -138,8 +138,8 @@
                         layer is fully local and <strong>self-learning</strong> (TF-IDF character n-grams + logistic
                         regression; confirmed corrections are remembered permanently), and no query executes without
                         user confirmation. Deployed <strong>24/7 in the official SuperCDMS collaboration Slack
-                        workspace</strong> — with an auto-updating watchdog, graceful restarts, quota-managed
-                        background export jobs, and periodic data-taking reports — and as a pip-installable
+                        workspace</strong>, with an auto-updating watchdog, graceful restarts, quota-managed
+                        background export jobs, and periodic data-taking reports, and as a pip-installable
                         package and Python library with six documentation files. It replaces the previous manual
                         practice, in which a comparable parameter log for a single detector test took three
                         undergraduates and a postdoc about three months of hand-copied spreadsheets. Its measured
@@ -172,7 +172,7 @@
                         activation line, cached <strong>~120 GB</strong> of raw traces with resumable per-detector
                         SLURM jobs on the MSI cluster, fitted every trace with a free-pretrigger 2-exponential
                         model with per-trace quality diagnostics, and constructed both analytic 1×1 and
-                        PCA-based N×M templates — delivered as ROOT files in the collaboration's official
+                        PCA-based N×M templates, delivered as ROOT files in the collaboration's official
                         PulseTemplates format and used as the R4 pulse templates for the optimal-filter reprocessing.
                         Presented at the <strong>SuperCDMS Analysis Working Group meeting</strong> on July 29, 2026. The code works with SuperCDMS collaboration-internal data, so its repository is currently private (available on request).</p>
                     </li>
@@ -192,7 +192,7 @@
                         is integrated in closed form, which removes the integration-window and baseline-drift
                         dependence of integrating the raw trace. Applied to every K-line event in every channel,
                         this showed that a single channel's energy is broadened mainly by event position, and that
-                        summing the channels removes most of it — yielding the detector's collection efficiency
+                        summing the channels removes most of it, yielding the detector's collection efficiency
                         without any fitted relative-calibration factors. Presented at the <strong>SuperCDMS Analysis
                         Working Group meeting</strong> on September 23, 2026. The code works with SuperCDMS collaboration-internal data, so its repository is currently private (available on request).</p>
                     </li>
@@ -217,7 +217,7 @@
                         dual IDLE/COLD threshold logic, transition-state alert suppression, real-time
                         temperature/pressure/flow alerts, command-based threshold overrides and acknowledgments,
                         sensor status queries, and custom time-range plot generation with image upload directly
-                        to Slack. In July 2026 extended the platform to a second instrument — an Arduino-read
+                        to Slack. In July 2026 extended the platform to a second instrument, an Arduino-read
                         liquid-nitrogen scale (<a href="https://github.com/ZhihengLi0/ln2_monitor" target="_blank">ln2_monitor</a>):
                         cron-driven ingestion into its own PostgreSQL database, weight/temperature/staleness
                         alerts, and natural-language status queries and plots answered by the same Slack bot in the same channel.</p>
@@ -290,7 +290,7 @@
                         of SuperCDMS data analysis. Independently derived connections between convolution as a
                         linear mapping, the Fourier transform as a function-space inner product, and the
                         time-frequency uncertainty principle. Explored Green's function approaches to signal
-                        decomposition — a direction confirmed to be active in signal-processing research.</p>
+                        decomposition, a direction confirmed to be active in signal-processing research.</p>
                     <div class="tags">
                         <span class="tag">Signal Processing</span><span class="tag">Fourier Analysis</span><span class="tag">Mathematics</span>
                     </div>
@@ -439,22 +439,22 @@
 
             <div class="proj-item">
                 <div class="pi-header">
-                    <h3>Novel Billiards Rest (架杆) — Entrepreneurship Project</h3>
+                    <h3>Novel Billiards Rest (架杆): Entrepreneurship Project</h3>
                     <span class="badge">Oct 2024 – Jun 2025</span>
                 </div>
                 <p class="pi-role"><span class="tl-badge">Team Leader</span> &nbsp;·&nbsp; Beijing, China</p>
                 <p class="proj-story">
-                    Billiards — snooker and Chinese 8-ball — is how I decompress. One afternoon mid-game,
+                    Billiards, snooker and Chinese 8-ball, is how I decompress. One afternoon mid-game,
                     I caught myself switching between a high bridge and a low bridge for the third time in
                     a row, and the thought surfaced: <em>there is no reason these two can't be one.</em>
                     A combined rest head would save players the interruption, save hall owners the
                     redundant inventory, and reduce material waste in production. I checked whether
-                    anything like it existed — it didn't. To me, that gap was less a risk and more a
+                    anything like it existed, and nothing did. To me, that gap was less a risk and more a
                     signal: if the idea is sound and the market is open, the right move is to act.
                 </p>
                 <p>
-                    I assembled a team of close friends, each chosen for a specific strength — CAD
-                    modeling, market research, marketing — and took on the role of coordinating the whole.
+                    I assembled a team of close friends, each chosen for a specific strength, CAD
+                    modeling, market research or marketing, and took on the role of coordinating the whole.
                     We moved from 3D concept to printed prototype, gathered feedback from real players,
                     iterated, and refined. The process taught me that good ideas only matter if you can
                     build the team and the momentum to carry them through. We filed a patent, won
@@ -468,7 +468,7 @@
                     E-Commerce Challenge (campus level).
                 </p>
                 <p class="proj-motto">
-                    I tend to have more ideas than I can ever execute — but I've learned that the ones
+                    I tend to have more ideas than I can ever execute, but I've learned that the ones
                     worth chasing are the ones simple enough to explain in a sentence and hard enough
                     that no one else has tried yet.
                 </p>
@@ -484,7 +484,7 @@
                 </div>
                 <div class="billiards-gallery">
                     <figure class="bg-fig" onclick="openLb('assets/images/billiards/product_prototype.jpg')">
-                        <img loading="lazy" src="assets/images/billiards/product_prototype.jpg" alt="Physical prototype of the billiard rest — gold metal and 3D-printed versions">
+                        <img loading="lazy" src="assets/images/billiards/product_prototype.jpg" alt="Physical prototype of the billiard rest, gold metal and 3D-printed versions">
                         <figcaption>Physical Prototype</figcaption>
                     </figure>
                     <figure class="bg-fig" onclick="openLb('assets/images/billiards/player_interview_prototype_testing.jpg')">
@@ -497,10 +497,10 @@
                     </figure>
                     <figure class="bg-fig" onclick="openLb('assets/images/billiards/kering_president.jpg')">
                         <img loading="lazy" src="assets/images/billiards/kering_president.jpg" alt="With Ms. Cai Jinqing, President of Kering Greater China, at Tsinghua X-Lab Roadshow">
-                        <figcaption>With Ms. Cai Jinqing, President of Kering Greater China — product highly praised</figcaption>
+                        <figcaption>With Ms. Cai Jinqing, President of Kering Greater China; product highly praised</figcaption>
                     </figure>
                     <figure class="bg-fig" onclick="openLb('assets/images/billiards/patent_receipt.jpg')">
-                        <img loading="lazy" src="assets/images/billiards/patent_receipt.jpg" alt="CNIPA patent application receipt — utility patent under review">
+                        <img loading="lazy" src="assets/images/billiards/patent_receipt.jpg" alt="CNIPA patent application receipt, utility patent under review">
                         <figcaption>Patent Application (Under Review)</figcaption>
                     </figure>
                     <figure class="bg-fig" onclick="openLb('assets/images/billiards/patent_drawing.jpg')">
@@ -524,7 +524,7 @@
 
             <div class="proj-item">
                 <div class="pi-header">
-                    <h3>Beverage Innovation Project — College Student Innovation Competition</h3>
+                    <h3>Beverage Innovation Project: College Student Innovation Competition</h3>
                     <span class="badge">2024 – 2025</span>
                 </div>
                 <p class="pi-role">Team Member &nbsp;·&nbsp; Beijing, China</p>
@@ -562,9 +562,9 @@
             </div>
 
             <p>
-                As someone who has long been passionate about sports — playing soccer,
+                As someone who has long been passionate about sports, playing soccer,
                 billiards, and table tennis, and dedicating an hour each day to fitness not
-                just for physical health but as a way to decompress and reconnect with myself —
+                just for physical health but as a way to decompress and reconnect with myself,
                 volunteering at the 2026 Special Olympics USA Games was an experience that
                 left a deep and lasting impression on me.
             </p>
@@ -572,7 +572,7 @@
                 On June 25, 2026, I served as a ball retriever in the tennis division at
                 the University of Minnesota. It was also my first time being involved in
                 tennis. I was grouped with three other volunteers, all of whom were incredibly
-                patient and welcoming — giving me enough time and space to understand the rules
+                patient and welcoming, giving me enough time and space to understand the rules
                 and settle into my role before the matches began. Working alongside fellow
                 volunteers, including referees who were themselves volunteers, made the
                 experience feel warm and collaborative from the very start.
@@ -580,7 +580,7 @@
             <p>
                 The moment that stayed with me most involved an athlete named Lillie. Despite
                 her cognitive disability, she competed with quiet and unwavering determination.
-                Every single serve was the same — arm and ball raised to a perfect 90 degrees,
+                Every single serve was the same: arm and ball raised to a perfect 90 degrees,
                 consistent and focused, without a single deviation. When the referee asked
                 whether she wanted to change ends, she looked confused. Her coach stood patiently
                 beside her, repeating softly "your choice, your choice" until she felt ready
@@ -594,7 +594,7 @@
             <p>
                 That day I came to understand what sports truly means: not just competition,
                 but passion, inclusion, perseverance, purity, and even redemption. These values
-                are not separate — together, they form the complete spirit of sport, and perhaps
+                are not separate; together, they form the complete spirit of sport, and perhaps
                 its original purpose. I feel genuinely honored to have played a small role in
                 supporting these athletes as they pursued their dreams.
             </p>
@@ -626,39 +626,39 @@
         <div class="award-table">
             <div class="award-row">
                 <span class="aw-year">2026</span>
-                <span class="aw-text"><strong>UROP Fellowship</strong> — Undergraduate Research Opportunities Program, University of Minnesota (Summer 2026)</span>
+                <span class="aw-text"><strong>UROP Fellowship</strong>: Undergraduate Research Opportunities Program, University of Minnesota (Summer 2026)</span>
             </div>
             <div class="award-row">
                 <span class="aw-year">2026</span>
-                <span class="aw-text"><strong>Dean's List</strong> — Fall 2025 &amp; Spring 2026, University of Minnesota &nbsp;(GPA 4.0 / 4.0)</span>
+                <span class="aw-text"><strong>Dean's List</strong>: Fall 2025 &amp; Spring 2026, University of Minnesota &nbsp;(GPA 4.0 / 4.0)</span>
             </div>
             <div class="award-row">
                 <span class="aw-year">2026</span>
-                <span class="aw-text"><strong>Tau Sigma Academic Honor Society</strong> — Initiated at University of Minnesota – Twin Cities, January 23, 2026</span>
+                <span class="aw-text"><strong>Tau Sigma Academic Honor Society</strong>: Initiated at University of Minnesota – Twin Cities, January 23, 2026</span>
             </div>
             <div class="award-row">
                 <span class="aw-year">2025</span>
-                <span class="aw-text"><strong>1st Prize</strong> — 4th Beijing University Student Innovation &amp; Entrepreneurship Competition, Science &amp; Technology Track</span>
+                <span class="aw-text"><strong>1st Prize</strong>: 4th Beijing University Student Innovation &amp; Entrepreneurship Competition, Science &amp; Technology Track</span>
             </div>
             <div class="award-row">
                 <span class="aw-year">2025</span>
-                <span class="aw-text"><strong>1st Prize (Beijing District)</strong> — China International College Students' Innovation Competition (2025)</span>
+                <span class="aw-text"><strong>1st Prize (Beijing District)</strong>: China International College Students' Innovation Competition (2025)</span>
             </div>
             <div class="award-row">
                 <span class="aw-year">2025</span>
-                <span class="aw-text"><strong>1st Prize</strong> — 15th National College E-Commerce "Innovation, Creativity &amp; Entrepreneurship" Challenge, Campus Level &nbsp;·&nbsp; Team Leader</span>
+                <span class="aw-text"><strong>1st Prize</strong>: 15th National College E-Commerce "Innovation, Creativity &amp; Entrepreneurship" Challenge, Campus Level &nbsp;·&nbsp; Team Leader</span>
             </div>
             <div class="award-row">
                 <span class="aw-year">2025</span>
-                <span class="aw-text"><strong>2nd Prize</strong> — NECCS National English Competition for College Students</span>
+                <span class="aw-text"><strong>2nd Prize</strong>: NECCS National English Competition for College Students</span>
             </div>
             <div class="award-row">
                 <span class="aw-year">2025</span>
-                <span class="aw-text"><strong>3rd Prize</strong> — China International College Students' Innovation Competition (2025), Campus Level &nbsp;·&nbsp; Team Leader</span>
+                <span class="aw-text"><strong>3rd Prize</strong>: China International College Students' Innovation Competition (2025), Campus Level &nbsp;·&nbsp; Team Leader</span>
             </div>
             <div class="award-row">
                 <span class="aw-year">2024</span>
-                <span class="aw-text"><strong>Third-Tier Scholarship</strong> — Beijing University of Agriculture, 2023–2024 Academic Year</span>
+                <span class="aw-text"><strong>Third-Tier Scholarship</strong>: Beijing University of Agriculture, 2023–2024 Academic Year</span>
             </div>
         </div>
 
@@ -715,7 +715,7 @@
             </li>
             <li class="news-item">
                 <span class="nd">Sep 2026</span>
-                <span>Presented the <strong>phonon collection efficiency analysis of SNOLAB R4 detector Z7</strong> to the <strong>SuperCDMS Analysis Working Group</strong> on September 23, 2026 — every K-line pulse converted from current to power with the TES electrothermal equations and integrated in closed form.</span>
+                <span>Presented the <strong>phonon collection efficiency analysis of SNOLAB R4 detector Z7</strong> to the <strong>SuperCDMS Analysis Working Group</strong> on September 23, 2026: every K-line pulse converted from current to power with the TES electrothermal equations and integrated in closed form.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Sep 2026</span>
@@ -727,7 +727,7 @@
             </li>
             <li class="news-item">
                 <span class="nd">Aug 2026</span>
-                <span>Started a remote collaboration with <strong>Kaiwen Sheng (Deisseroth &amp; Mitra labs, Stanford)</strong>: tracking eight keypoints on the mouse eye with DeepLabCut, and building the labeling, training and evaluation workflow around it, for alignment with brain recordings — weekly meetings and a public repository from day one.</span>
+                <span>Started a remote collaboration with <strong>Kaiwen Sheng (Deisseroth &amp; Mitra labs, Stanford)</strong>: tracking eight keypoints on the mouse eye with DeepLabCut, and building the labeling, training and evaluation workflow around it, for alignment with brain recordings, with weekly meetings and a public repository from day one.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Jul 2026</span>
@@ -735,7 +735,7 @@
             </li>
             <li class="news-item">
                 <span class="nd">Jul 2026</span>
-                <span>Completed the final SNOLAB R4 phonon pulse template production for <strong>all 13 detectors</strong> — free-pretrigger 2-exponential fits, PCA-based N×M templates, delivered in the official PulseTemplates ROOT format.</span>
+                <span>Completed the final SNOLAB R4 phonon pulse template production for <strong>all 13 detectors</strong>: free-pretrigger 2-exponential fits, PCA-based N×M templates, delivered in the official PulseTemplates ROOT format.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Jul 2026</span>
@@ -743,7 +743,7 @@
             </li>
             <li class="news-item">
                 <span class="nd">Jul 2026</span>
-                <span>Presented <strong>cdms_spotlight</strong> to the international collaboration at the <strong>SuperCDMS Software Meeting</strong> on July 14, 2026 — a self-learning natural-language query system for the SNOLAB DQM database, now running <strong>24/7 in the official SuperCDMS Slack workspace</strong> and pip-installable from GitHub.</span>
+                <span>Presented <strong>cdms_spotlight</strong> to the international collaboration at the <strong>SuperCDMS Software Meeting</strong> on July 14, 2026, a self-learning natural-language query system for the SNOLAB DQM database, now running <strong>24/7 in the official SuperCDMS Slack workspace</strong> and pip-installable from GitHub.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Jun 2026</span>
@@ -759,7 +759,7 @@
             </li>
             <li class="news-item">
                 <span class="nd">Jun 2026</span>
-                <span>Deployed the <strong>BlueFors-Alert Slack bot</strong> — a real-time monitoring and interactive alert system integrated with the PostgreSQL CS2 database, supporting threshold commands and sensor acknowledgement via Slack.</span>
+                <span>Deployed the <strong>BlueFors-Alert Slack bot</strong>, a real-time monitoring and interactive alert system integrated with the PostgreSQL CS2 database, supporting threshold commands and sensor acknowledgement via Slack.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Jun 2026</span>
@@ -799,15 +799,15 @@
             </li>
             <li class="news-item">
                 <span class="nd">Sep 2025</span>
-                <span><strong>1st Prize</strong> — 4th Beijing University Student Innovation &amp; Entrepreneurship Competition (Science &amp; Technology Track).</span>
+                <span><strong>1st Prize</strong>: 4th Beijing University Student Innovation &amp; Entrepreneurship Competition (Science &amp; Technology Track).</span>
             </li>
             <li class="news-item">
                 <span class="nd">May 2025</span>
-                <span>Novel billiards rest project received <strong>national-level project approval</strong> and government seed funding; Chinese Utility Patent application (No. 202520618681.1) submitted to CNIPA — currently under review.</span>
+                <span>Novel billiards rest project received <strong>national-level project approval</strong> and government seed funding; Chinese Utility Patent application (No. 202520618681.1) submitted to CNIPA, currently under review.</span>
             </li>
             <li class="news-item">
                 <span class="nd">May 2025</span>
-                <span><strong>1st Prize (Beijing District)</strong> — China International College Students' Innovation Competition (2025).</span>
+                <span><strong>1st Prize (Beijing District)</strong>: China International College Students' Innovation Competition (2025).</span>
             </li>
             <li class="news-item">
                 <span class="nd">May 2025</span>
@@ -815,7 +815,7 @@
             </li>
             <li class="news-item">
                 <span class="nd">May 2025</span>
-                <span><strong>1st Prize</strong> — 15th National College E-Commerce Challenge, Campus Level (<span class="tl-badge">Team Leader</span>).</span>
+                <span><strong>1st Prize</strong>: 15th National College E-Commerce Challenge, Campus Level (<span class="tl-badge">Team Leader</span>).</span>
             </li>
         </ul>
         </div>
