@@ -308,17 +308,15 @@
                         <span class="badge">Aug – Sep 2026</span>
                         <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s1" target="_blank">↗ Steps 1–4</a>
                     </div>
-                    <p>Eight points on a mouse eye — the pupil as an ellipse, the two eyelids, the two corners — are tracked
-                        with <strong>DeepLabCut</strong>, an existing tool, in infrared videos of about twenty minutes, recorded
-                        over multiple days, for three mice. The aim is a pupil-size and blink series that can be laid
-                        next to the brain recordings of the same session. On the first video I fixed the training recipe by
-                        controlled experiments, with test frames that never enter any choice: the <strong>batch size</strong>
-                        (the candidates could not be told apart on the test error, so the one with the lowest validation
-                        loss was kept), the <strong>backbone</strong> (ResNet-50, the lowest test error and the most confident
-                        points among five), and the <strong>rule that picks frames for correction</strong> — uncertainty,
-                        jump and trajectory-fit detectors were run side by side for many rounds and ended at the same error,
-                        so the simplest one, the jump rule, was kept. The definition of every keypoint was then written
-                        down and all earlier frames relabeled under it.</p>
+                    <p>Eight points on a mouse eye are tracked with <strong>DeepLabCut</strong>, an existing tool, in
+                        infrared videos of about twenty minutes, recorded over multiple days, for three mice: the pupil as
+                        an ellipse, the two eyelids and the two corners. The aim is a pupil-size and blink series that can
+                        be laid next to the brain recordings of the same session. On the first video I fixed the training
+                        recipe by controlled experiments, with test frames that never enter any choice: the
+                        <strong>batch size</strong>, the <strong>backbone</strong>, settled on ResNet-50, and the
+                        <strong>rule that picks frames for correction</strong>, settled on the jump rule because it did
+                        best. The definition of every keypoint was then written down and all earlier frames relabeled
+                        under it.</p>
                     <div class="tags">
                         <span class="tag">DeepLabCut</span><span class="tag">PyTorch</span><span class="tag">Controlled Experiments</span><span class="tag">Computer Vision</span>
                     </div>
@@ -331,7 +329,7 @@
                         <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s5" target="_blank">↗ Steps 5–11</a>
                     </div>
                     <p>The question behind the collaboration: on a new video, how many human labels are needed before
-                        the model is good enough? Every video goes through the same loop — pre-label with the previous
+                        the model is good enough? Every video goes through the same loop: pre-label with the previous
                         video's model, correct by hand, retrain, pick the next frames where the tracking jumps, and stop when
                         two more steps of 20 labels no longer improve the test error; only the labels up to that point are
                         carried into later videos, as in real use. Across <strong>19 videos from 3 mice</strong>, 20 labels on a new mouse cut the
