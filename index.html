@@ -330,15 +330,22 @@
                         <span class="badge">Sep – Oct 2026</span>
                         <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s5" target="_blank">↗ Steps 5–11</a>
                     </div>
-                    <p>The question behind the collaboration: on a new video, how many human labels are needed before
-                        the model is good enough? Every video goes through the same loop: pre-label with the previous
-                        video's model, correct by hand, retrain, pick the next frames where the tracking jumps, and stop when
-                        two more steps of 20 labels no longer improve the test error; only the labels up to that point are
-                        carried into later videos, as in real use. Across <strong>19 videos from 3 mice</strong>, 20 labels on a new mouse cut the
-                        median error from 208 px to 10.4 px; most videos settled at <strong>20–40 labels</strong>, two needed
-                        none, and adding videos did not degrade the earlier ones. From the tracked points, pupil size, eye opening and blinks are derived
-                        frame by frame <strong>without temporal smoothing</strong>. Every number on the project page comes
-                        from one script and one formula, and every step is committed as it happens.</p>
+                    <p>Each video is cut in time: the final part gives a fixed external test set of 50 frames, the part
+                        before it an internal validation set, and training frames come only from the rest. The first 20
+                        training frames are found by k-means clustering on image appearance and labeled. After that,
+                        every step of active learning takes 20 new frames from where the "jump" correction rule says the
+                        tracking is unstable, clustered again so that they differ from each other, pre-labeled by the
+                        previous model and corrected by hand. This repeats until the saturation point, two steps in a row
+                        that improve the error by less than 3 %; all training frames up to that point are carried into
+                        the next video, every step trains from scratch, and the loop runs over <strong>19 videos from
+                        three mice</strong>. What came out: most videos saturate at <strong>20 or 40 labels</strong>; a
+                        new mouse needs its own labels, and 20 of them cut the median error from 208 px to 10.4 px; a
+                        second video of the same day often needs few or none; adding videos never made the earlier ones
+                        worse; and a few videos with poor image quality keep some frames far off at any label count,
+                        which is what the current phase is about. From the tracked points, pupil size, eye opening and
+                        blinks are derived frame by frame <strong>without temporal smoothing</strong>. Every number on
+                        the project page comes from one script and one formula, and every step is committed as it
+                        happens.</p>
                     <div class="tags">
                         <span class="tag">Active Learning</span><span class="tag">Label Efficiency</span><span class="tag">Experiment Design</span><span class="tag">Reproducibility</span>
                     </div>
