@@ -313,10 +313,11 @@
                         an ellipse, the two eyelids and the two corners. The aim is a labeling and training recipe that can
                         be used at scale and gives the most accurate predictions, so that blinks and pupil area can
                         then be read off and aligned with the neural signals of the mouse brain. On the first video I fixed the training
-                        recipe by controlled experiments, with test frames that never enter any choice: the
-                        <strong>batch size</strong>, the <strong>backbone</strong>, settled on ResNet-50, and the
-                        <strong>rule that picks frames for correction</strong>, settled on the jump rule because it did
-                        best. The definition of every keypoint was then written down and all earlier frames relabeled
+                        recipe by controlled experiments, with test frames that never enter any choice. By the validation
+                        loss I settled on a <strong>batch size</strong> of 2; by the lowest error and the highest
+                        confidence on the held-out test frames I chose the <strong>ResNet-50 backbone</strong> among five;
+                        and among the <strong>rules that pick frames for correction</strong> the jump rule did best, so it
+                        was kept. The definition of every keypoint was then written down and all earlier frames relabeled
                         under it.</p>
                     <div class="tags">
                         <span class="tag">DeepLabCut</span><span class="tag">PyTorch</span><span class="tag">Controlled Experiments</span><span class="tag">Computer Vision</span>
