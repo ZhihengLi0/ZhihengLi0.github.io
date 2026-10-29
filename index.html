@@ -338,11 +338,13 @@
                         previous model and corrected by hand. This repeats until the saturation point, two steps in a row
                         that improve the error by less than 3 %; all training frames up to that point are carried into
                         the next video, every step trains from scratch, and the loop runs over <strong>19 videos from
-                        three mice</strong>. What came out: most videos saturate at <strong>20 or 40 labels</strong>; a
-                        new mouse needs its own labels, and 20 of them cut the median error from 208 px to 10.4 px; a
-                        second video of the same day often needs few or none; adding videos never made the earlier ones
-                        worse; and a few videos with poor image quality keep some frames far off at any label count,
-                        which is what the current phase is about. From the tracked points, pupil size, eye opening and
+                        three mice</strong>. Afterwards I went back and asked whether a first batch of 5 or 10 labels
+                        would have done: two subsets of each size were drawn from the 20, to rule out luck, and the best
+                        and the worst of them are shown as a triangle on the curve of each video. What came out: most
+                        videos saturate at <strong>20 or 40 labels</strong>; a new mouse needs its own labels, and 20 of
+                        them cut the median error from 208 px to 10.4 px; a second video of the same day often needs few
+                        or none; adding videos never made the earlier ones worse; and the more mice the model has seen,
+                        the better it starts on the next mouse before any label. From the tracked points, pupil size, eye opening and
                         blinks are derived frame by frame <strong>without temporal smoothing</strong>. Every number on
                         the project page comes from one script and one formula, and every step is committed as it
                         happens.</p>
