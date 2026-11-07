@@ -77,7 +77,8 @@
             as a SuperCDMS researcher, a member of the collaboration, and as Prof. Yan Liu's research
             assistant and UROP Fellow, and since
             August 2026 I also work remotely with the Deisseroth &amp; Mitra labs at Stanford on tracking
-            mouse eye behaviour for alignment with brain recordings;
+            mouse eye behaviour for alignment with brain recordings, where I built a self-correcting pipeline
+            that finds and repairs the frames the model gets wrong without extra labels;
             the individual projects are detailed <a href="#research">below</a>. This semester I am also
             reading <em>Measure and Integral: An Introduction to Real Analysis</em> (Wheeden &amp; Zygmund,
             2nd ed.) in the UMN Directed Reading Program, with Anisha Jain, a Ph.D. student in Mathematics,
@@ -99,7 +100,7 @@
             </div>
             <div class="skills-row">
                 <span class="skills-label">Applied Algorithms</span>
-                <span class="skills-val">Industrial time-series cleaning &nbsp;·&nbsp; Anomaly detection &nbsp;·&nbsp; Missing-data imputation &nbsp;·&nbsp; Real-time processing &nbsp;·&nbsp; Active learning &nbsp;·&nbsp; Keypoint tracking &nbsp;·&nbsp; Frame selection by clustering &nbsp;·&nbsp; Time-series detection of unreliable frames</span>
+                <span class="skills-val">Industrial time-series cleaning &nbsp;·&nbsp; Anomaly detection &nbsp;·&nbsp; Missing-data imputation &nbsp;·&nbsp; Real-time processing &nbsp;·&nbsp; Active learning &nbsp;·&nbsp; Keypoint tracking &nbsp;·&nbsp; Frame selection by clustering &nbsp;·&nbsp; Time-series detection of unreliable frames &nbsp;·&nbsp; Heatmap-based repair &nbsp;·&nbsp; Self-training loop</span>
             </div>
             <div class="skills-row">
                 <span class="skills-label">Languages</span>
@@ -307,6 +308,7 @@
         </div>
         <p class="rc-sub">Deisseroth &amp; Mitra Labs, Department of Psychiatry, Stanford University &nbsp;·&nbsp; remote from Minneapolis</p>
         <p class="rc-role">Research Collaborator &nbsp;·&nbsp; with Kaiwen Sheng, Ph.D. student in Bioengineering &nbsp;·&nbsp; <a href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html" target="_blank">project page</a> (every step, with figures) &nbsp;·&nbsp; <a href="https://github.com/ZhihengLi0/mouse-behavior-tracking" target="_blank">code</a></p>
+        <p class="rc-role"><strong>What I built:</strong> a label-efficient recipe that tracks a mouse eye with 20–40 labels per video, and a self-correcting pipeline that finds the frames the model gets wrong without any label, repairs them from the model's own heatmaps and lets the model learn from them, so that pupil and blink signals from 19 videos can be aligned with brain recordings.</p>
 
         <div class="pe-list">
                 <div class="pe">
@@ -382,14 +384,30 @@
 
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">4 · Finding and repairing the frames that cannot be trusted</span>
-                        <span class="badge">Oct 2026 – ongoing</span>
+                        <span class="pe-title">4 · A self-correcting pipeline: find the untrustworthy frames without labels, repair them, let the model learn from them</span>
+                        <span class="badge">Oct – Nov 2026</span>
+                        <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s9" target="_blank">↗ Steps 9.1–9.4</a>
                     </div>
-                    <p>Once the active learning above has saturated, how do we find the frames whose predictions
-                        still cannot be trusted, and how can they be repaired with the least human effort? This is the
-                        current work.</p>
+                    <p>Once the active learning has saturated, a few percent of the 70,000 frames of a video are still
+                        wrong somewhere, there are no labels to find them with, and nobody can look at them all. I built a
+                        chain that lets the model check and correct itself. <strong>Finding</strong>: two label-free
+                        signals, a time-series predictor fitted on every tracked point of the video (a frame is flagged
+                        when a point jumps away from its own prediction) and a shape model from the video's own labeled
+                        poses (a frame is flagged when its pose does not fit); between them they found all 23 wrong frames
+                        among 1330 test frames. <strong>Repairing</strong>: a thrown point is moved to the second peak of
+                        the network's heatmap, the place the network itself held next most likely, and the move is
+                        accepted only if twenty scale-free geometric quantities of the eye fall inside the range spanned
+                        by the human labels, moving the fewest points that pass; 15 of the 23 wrong frames are repaired
+                        automatically, six of seven repairs are right by eye, nothing is ever deleted, and a frame that
+                        cannot be repaired stays flagged for the user. <strong>Learning</strong>: the unflagged and the
+                        repaired frames enter the training set and the model is retrained, turn after turn until it
+                        saturates. Every threshold is in units of the eye width and comes from the video's own labels, so
+                        the whole chain runs on a new video with no new labels and no tuning. On the hardest video the
+                        retrained model is wrong on 1 test frame where the starting model was wrong on 8, and on 24 hard
+                        frames labeled blind afterwards it is wrong on 2 where the starting model was wrong on 11. The
+                        loop is now being run to saturation.</p>
                     <div class="tags">
-                        <span class="tag">Time Series</span><span class="tag">Anomaly Detection</span>
+                        <span class="tag">Time Series</span><span class="tag">Anomaly Detection</span><span class="tag">Heatmaps</span><span class="tag">Self-Training</span><span class="tag">Pipeline Design</span>
                     </div>
                 </div>
             </div>
