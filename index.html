@@ -77,8 +77,8 @@
             as a SuperCDMS researcher, a member of the collaboration, and as Prof. Yan Liu's research
             assistant and UROP Fellow, and since
             August 2026 I also work remotely with the Deisseroth &amp; Mitra labs at Stanford on tracking
-            mouse eye behaviour for alignment with brain recordings, where I built a self-correcting pipeline
-            that finds and repairs the frames the model gets wrong without extra labels;
+            mouse eye behaviour for alignment with brain recordings, where I developed a pipeline that predicts every
+            frame of a video accurately from 20–40 human labels and corrects its own remaining errors;
             the individual projects are detailed <a href="#research">below</a>. This semester I am also
             reading <em>Measure and Integral: An Introduction to Real Analysis</em> (Wheeden &amp; Zygmund,
             2nd ed.) in the UMN Directed Reading Program, with Anisha Jain, a Ph.D. student in Mathematics,
@@ -351,7 +351,7 @@
         </div>
         <p class="rc-sub">Deisseroth &amp; Mitra Labs, Department of Psychiatry, Stanford University &nbsp;·&nbsp; remote from Minneapolis</p>
         <p class="rc-role">Research Collaborator &nbsp;·&nbsp; with Kaiwen Sheng, Ph.D. student in Bioengineering &nbsp;·&nbsp; <a href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html" target="_blank">project page</a> (every step, with figures) &nbsp;·&nbsp; <a href="https://github.com/ZhihengLi0/mouse-behavior-tracking" target="_blank">code</a></p>
-        <p class="rc-role"><strong>What I built:</strong> a label-efficient recipe that tracks a mouse eye with 20–40 labels per video, and a self-correcting pipeline that finds the frames the model gets wrong without any label, repairs them from the model's own heatmaps and lets the model learn from them, so that pupil and blink signals from 19 videos can be aligned with brain recordings.</p>
+        <p class="rc-role"><strong>What I built:</strong> a pipeline that, for most videos, needs only 20–40 human-labeled frames to predict every one of a video's ~70,000 frames accurately, so that pupil and eye-opening signals can be aligned with brain recordings; the frames it still gets wrong are found, repaired and learned from by the model itself, without new labels.</p>
 
         <div class="pe-list">
                 <div class="pe">
@@ -405,52 +405,60 @@
 
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">3 · Pupil area and blinks: fixing the rule for each</span>
+                        <span class="pe-title">3 · Pupil area and eye opening: choosing each rule by experiment</span>
                         <span class="badge">Oct 2026</span>
                         <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s9" target="_blank">↗ Steps 9–10</a>
                     </div>
                     <p>Pupil area first. On the test frames of all 19 videos, where the human labels give the true area
-                        as an ellipse through the four pupil points, I compared nine rules for computing the area from
-                        the model's points: the same four-point ellipse, rules that leave out one of the four points,
-                        rules that drop the point with the lowest confidence, and the four-point area followed by a
-                        median filter over time. The four-point rule had the lowest error and was kept. Blinks next, as a static rule, one frame at a time, open or not open. From each video
-                        frames were drawn at random across the range of eye opening and judged by eye. The eye opening is the pixel distance between the two eyelid points; since the camera and
-                        the mouse's position are fixed from day to day, one threshold per mouse is enough. For the few
-                        frames whose eyelid points are implausible the mean confidence of the four pupil points is used
-                        instead, since a closed eye shows no pupil. Both rules run on every frame of all 19 videos
-                        without temporal smoothing (smoothing would affect the later alignment with the brain signals);
-                        what a blink is over time is left for the dynamics.</p>
+                        as an ellipse through the four pupil points, I compared nine rules for computing the area from the
+                        model's points; the four-point ellipse had the lowest error and was kept. Eye opening next, one frame
+                        at a time: open, or not open (the eye closed or the lid covering part of the pupil). The criterion is
+                        the pixel distance between the two eyelid points. 327 frames, drawn at random across the range of eye
+                        opening, were judged by eye from the raw image alone; every threshold was tried on them, and each mouse
+                        gets the one that best separates open from not open (the largest recall minus false-alarm rate):
+                        147.5 px and 150.5 px, <strong>94 % and 89 % accurate</strong>. Since the camera and the mouse's
+                        position are fixed from day to day, one threshold per mouse is enough. For the few frames whose eyelid
+                        points are implausible (0.02–1.6 % of a video) the mean confidence of the four pupil points is used
+                        instead, since a closed eye shows no pupil. Both rules run on every frame of all 19 videos without
+                        temporal smoothing (smoothing would affect the later alignment with the brain signals); what a blink
+                        is over time is left for the dynamics.</p>
                     <div class="tags">
-                        <span class="tag">Pupil Area</span><span class="tag">Blink Detection</span>
+                        <span class="tag">Pupil Area</span><span class="tag">Eye Opening</span><span class="tag">Threshold Calibration</span>
                     </div>
                 </div>
 
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">4 · A self-correcting pipeline: find the untrustworthy frames without labels, repair them, let the model learn from them</span>
-                        <span class="badge">Oct – Nov 2026</span>
+                        <span class="pe-title">4 · A self-correcting training loop: find the wrong frames without labels, repair them, retrain on them</span>
+                        <span class="badge">Oct 2026 – Present</span>
                         <a class="gh-link" href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s9" target="_blank">↗ Steps 9.1–9.4</a>
                     </div>
-                    <p>Once the active learning has saturated, a few percent of the 70,000 frames of a video are still
-                        wrong somewhere, there are no labels to find them with, and nobody can look at them all. I built a
-                        chain that lets the model check and correct itself. <strong>Finding</strong>: two label-free
-                        signals, a time-series predictor fitted on every tracked point of the video (a frame is flagged
-                        when a point jumps away from its own prediction) and a shape model from the video's own labeled
-                        poses (a frame is flagged when its pose does not fit); between them they found all 23 wrong frames
-                        among 1330 test frames. <strong>Repairing</strong>: a thrown point is moved to the second peak of
-                        the network's heatmap, the place the network itself held next most likely, and the move is
-                        accepted only if twenty scale-free geometric quantities of the eye fall inside the range spanned
-                        by the human labels, moving the fewest points that pass; 15 of the 23 wrong frames are repaired
-                        automatically, six of seven repairs are right by eye, nothing is ever deleted, and a frame that
-                        cannot be repaired stays flagged for the user. <strong>Learning</strong>: the unflagged and the
-                        repaired frames enter the training set and the model is retrained, turn after turn until it
-                        saturates. Every threshold is in units of the eye width and comes from the video's own labels, so
-                        the whole chain runs on a new video with no new labels and no tuning. On the hardest video the
-                        retrained model is wrong on 1 test frame where the starting model was wrong on 8, and on 24 hard
-                        frames labeled blind afterwards it is wrong on 2 where the starting model was wrong on 11. The
-                        loop is now being run to saturation.</p>
+                    <p>Once the active learning has saturated, about 2 % of the frames are still wrong somewhere (23 of
+                        1330 test frames), over 1.3 million frames nobody can check by hand, and temporal smoothing is ruled
+                        out because it would disturb the alignment with the brain signals. I designed a loop in which the model
+                        finds, repairs and learns from its own errors. <strong>Finding</strong>: two label-free signals, an
+                        autoregressive time-series model fitted on every tracked point (a frame is flagged when a point jumps
+                        away from its one-step prediction) and a PCA shape model of the video's labeled poses (a frame is
+                        flagged when its pose does not fit); together they flag all 23 wrong test frames.
+                        <strong>Repairing</strong>: a flagged point is moved to the second peak of the network's heatmap, the
+                        place the network itself held next most likely, and the move is accepted only if twenty scale-free
+                        geometric quantities of the eye stay inside the range spanned by the human labels; points are tried in
+                        order of how far they jumped, and among the replacements that pass the one farthest inside the range
+                        is kept. 15 of the 23 wrong frames are repaired, about six of seven repairs are right by eye, nothing
+                        is ever deleted, and a frame that cannot be repaired stays flagged. <strong>Learning, tested by
+                        experiment</strong>: five controlled experiments, each judged on the test frames and on 34 frames per
+                        video labeled blind afterwards. Adding the unflagged frames, the repaired frames, or both to the
+                        training set (experiments 1 to 3) each beat the starting model: on the hardest video wrong test frames
+                        fall from 8 to 1 or 2, and wrong blind frames to a third or less (in experiment 3, 17, 12 and 10 to 4,
+                        3 and 4 on three videos). Experiment 4 set the closed-eye criterion on 80 frames judged by eye (the
+                        confidence of the pupil points, 92 % right) and showed that frames wrongly called closed, once
+                        repaired, improve the model too; experiment 5 chose the replacement rule by eye on 55 frames and runs
+                        the final loop. Distances are in eye widths and every threshold is calibrated on the human labels or
+                        on frames judged by eye, so the chain runs on a new video with no new labels and no tuning. The final
+                        loop is now running on four videos; once it saturates, I will analyse whether the remaining error can
+                        be reduced further.</p>
                     <div class="tags">
-                        <span class="tag">Time Series</span><span class="tag">Anomaly Detection</span><span class="tag">Heatmaps</span><span class="tag">Self-Training</span><span class="tag">Pipeline Design</span>
+                        <span class="tag">Time Series</span><span class="tag">Anomaly Detection</span><span class="tag">Heatmaps</span><span class="tag">Self-Training</span><span class="tag">Controlled Experiments</span><span class="tag">Pipeline Design</span>
                     </div>
                 </div>
             </div>
