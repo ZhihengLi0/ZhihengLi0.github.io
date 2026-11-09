@@ -157,26 +157,29 @@ def build(phone):
     entry(doc, "Mouse Eye Tracking for Neural Alignment - Deisseroth & Mitra Labs, Stanford University", "Remote")
     entry(doc, "Research Collaborator (remote), with Kaiwen Sheng, Ph.D. student in Bioengineering",
           "Aug 2026 - Present", bold=False, italic=True)
-    bullet(doc, "Set up eye keypoint tracking with **DeepLabCut** for infrared videos of mice recorded over multiple "
-                "days (eight points: pupil ellipse, eyelids, eye corners); fixed the training recipe on the first "
-                "video by controlled experiments with held-out test frames: batch size by validation loss, ResNet-50 "
-                "among five backbones by test error and confidence, and the \"jump\" rule, best of three, for picking "
-                "frames to correct; then defined every keypoint precisely for all later experiments.\tAug–Sep 2026")
-    bullet(doc, "Ran **active learning on 19 videos from 3 mice**: fixed test and validation frames per video, first "
-                "20 training frames by k-means on image appearance, then 20 frames per step where the jump rule "
-                "finds unstable tracking, pre-labeled, corrected and retrained from scratch, until two steps improve "
-                "the error by under 3 %. Most videos saturated at 20–40 labels; a new mouse needs its own labels "
-                "(208 px to 10.4 px with 20) but starts better with every mouse seen; adding videos did not degrade "
-                "earlier ones; 5 or 10 labels, checked with two subsets each, cannot replace 20. All data and "
-                "scripts organised so that every step reproduces.\tSep–Oct 2026")
-    bullet(doc, "Chose the **pupil-area rule** by comparing nine candidates against human ellipse labels on all test "
-                "frames (four-point ellipse best, median filtering does not help) and built a per-frame **blink "
-                "rule**: one eyelid-distance threshold per mouse set on frames judged by eye, pupil confidence as "
-                "fallback; both run frame by frame, unsmoothed, for alignment with brain recordings.\tOct 2026")
-    bullet(doc, "Built a self-correcting pipeline that **finds the frames the model gets wrong without new labels, "
-                "repairs them from the network's own heatmaps under a geometric check learned from the human labels, "
-                "and retrains on the result**; the retrained models make far fewer gross errors on frames labeled "
-                "blind afterwards, and the chain runs on a new video without tuning.\tOct–Nov 2026")
+    para(doc, "To align eye behaviour with brain recordings, developed a pipeline that, for most videos, needs only "
+              "20\u2060–\u206040 human-labeled frames to predict every one of a video's ~70,000 frames accurately.",
+         after=1, right_tab=False)
+    bullet(doc, "Set up **DeepLabCut** tracking of eight eye keypoints (pupil ellipse, eyelids, eye corners) in infrared "
+                "videos recorded over multiple days; fixed the training recipe by controlled experiments on held-out test "
+                "frames (batch size, ResNet-50 among five backbones, the \"jump\" frame-picking rule) and defined every "
+                "keypoint precisely.\tAug–Sep 2026")
+    bullet(doc, "Ran **active learning on 19 videos from 3 mice** to find how many labels each video needs (first 20 frames "
+                "by k-means, then 20 per step where tracking is unstable, until two steps improve the error by under "
+                "3\u00a0%): most videos saturate at 20\u2060–\u206040 labels; a new mouse needs its own labels (208\u00a0px to 10.4\u00a0px with "
+                "20) but starts better with every mouse seen; adding videos never degraded earlier ones; 5 or 10 labels "
+                "cannot replace 20.\tSep–Oct 2026")
+    bullet(doc, "Compared nine algorithms for the **pupil area** (four-point ellipse closest to the human labels) and found "
+                "a simple, accurate **per-frame eye-opening criterion**: the eyelid distance, with each mouse's threshold "
+                "the best of all tried on 327 frames judged by eye (94\u00a0% and 89\u00a0% accurate); both unsmoothed, for "
+                "alignment with brain recordings.\tOct 2026")
+    bullet(doc, "Designed a **self-correcting training loop** for the ~2\u00a0% of 1.3\u00a0M frames still wrong after labeling "
+                "saturates, too many to check by hand and not to be smoothed over time: it **finds wrong frames without "
+                "labels**, **repairs them from the network's own heatmaps** under a geometric check from the human "
+                "labels, and **retrains on them**. **Five controlled experiments** showed that unflagged and repaired "
+                "frames both improve the model and chose the repair and closed-eye rules; every threshold is calibrated "
+                "on labels or frames judged by eye. Loop now running; once it saturates, will analyse whether the error "
+                "can be reduced further.\tOct 2026 - Present")
 
     # ---------------------------------------------------------------- industry
     section(doc, "RESEARCH & INDUSTRY EXPERIENCE")
