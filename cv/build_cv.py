@@ -103,7 +103,7 @@ def build(phone):
                 "Programming in Python and Java, Introduction to Algorithms & Data Structures, Introduction to "
                 "Statistical Analysis, Cryptology & Number Theory")
     bullet(doc, "**Directed Reading Program (Fall 2026):** *Measure and Integral: An Introduction to Real Analysis* "
-                "(Wheeden & Zygmund, 2nd ed.) — foundations for Optimal Transport, with mentor Anisha Jain, "
+                "(Wheeden & Zygmund, 2nd ed.), as foundations for Optimal Transport, with mentor Anisha Jain, "
                 "Ph.D. student in Mathematics, University of Minnesota")
 
     # ---------------------------------------------------------------- research
@@ -135,8 +135,8 @@ def build(phone):
                 "with infinite feedback; derived the two coupled electro-thermal equations, linearised them to the "
                 "complex impedance and fitted its four unknowns (current sensitivity, loop gain, thermal time "
                 "constant, inductance) on Run 7 data with code written from the equations, reproducing the "
-                "Irwin–Hilton (2005) two-time-constant response; the data show a **third pole, still an open "
-                "question in the collaboration** — tested a second thermal body against the readout electronics, on "
+                "Irwin and Hilton (2005) two-time-constant response; the data show a **third pole, still an open "
+                "question in the collaboration**; tested a second thermal body against the readout electronics, on "
                 "the data and with the readout board measured alone on the bench, and placed it in the sensor; next, "
                 "data from a second injection point, then a simulation to estimate the efficiency of low-energy "
                 "events.\tOct 2026 - Present")
