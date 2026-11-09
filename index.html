@@ -96,7 +96,7 @@
             </div>
             <div class="skills-row">
                 <span class="skills-label">Tools</span>
-                <span class="skills-val">Git / GitHub &nbsp;·&nbsp; Jupyter &nbsp;·&nbsp; DeepLabCut / PyTorch &nbsp;·&nbsp; ROOT &nbsp;·&nbsp; Linux &nbsp;·&nbsp; Slurm &nbsp;·&nbsp; HPC (MSI Agate)</span>
+                <span class="skills-val">Git / GitHub &nbsp;·&nbsp; Jupyter &nbsp;·&nbsp; DeepLabCut / PyTorch &nbsp;·&nbsp; C++ &nbsp;·&nbsp; MIDAS / ODB &nbsp;·&nbsp; ROOT &nbsp;·&nbsp; Linux &nbsp;·&nbsp; Slurm &nbsp;·&nbsp; HPC (MSI Agate)</span>
             </div>
             <div class="skills-row">
                 <span class="skills-label">Applied Algorithms</span>
@@ -159,8 +159,8 @@
 
                 <div class="pe">
                     <div class="pe-head">
-                        <span class="pe-title">SNOLAB Run 4 Phonon Pulse Analysis</span>
-                        <span class="badge">May – Sep 2026</span>
+                        <span class="pe-title">SNOLAB Phonon Pulse Analysis (Run 4, Run 7)</span>
+                        <span class="badge">May 2026 – Present</span>
                     </div>
                     <ul class="pe-sub">
                     <li>
@@ -199,11 +199,49 @@
                         this showed that a single channel's energy is broadened mainly by event position, and that
                         summing the channels removes most of it, yielding the detector's collection efficiency
                         without any fitted relative-calibration factors. Presented at the <strong>SuperCDMS Analysis
-                        Working Group meeting</strong> on September 23, 2026. The code works with SuperCDMS collaboration-internal data, so its repository is currently private (available on request).</p>
+                        Working Group meeting</strong> on September 23, 2026. The current-to-power step uses the
+                        instant-sensor, infinite-feedback limit of the TES model; making it exact is the next project
+                        below. The code works with SuperCDMS collaboration-internal data, so its repository is currently private (available on request).</p>
+                    </li>
+                    <li>
+                    <div class="pe-sub-head">
+                        <span class="pe-sub-title">Full-Model Collection Efficiency: TES Complex Impedance and the Readout Electronics</span>
+                        <span class="pe-sub-date">Oct 2026 – Present</span>
+                    </div>
+                    <p>The efficiency above, like the collaboration's, treats the sensor as responding instantly with
+                        infinite feedback, so current turns into power through a single constant. To make that step
+                        exact I built the <strong>full model</strong>: derived the two coupled electro-thermal equations
+                        of the TES, linearised them to the complex impedance, and wrote the fitting code from those
+                        equations (C++ core, Python reader and plots, any number of bias points) rather than from the
+                        collaboration's package, checking that both give the same answer. On Run 7 data the four
+                        unknowns the model needs (current sensitivity, loop gain, thermal time constant, circuit
+                        inductance) were fitted for every channel of Z7 in each of its three operating states,
+                        reproducing the two-time-constant response of Irwin and Hilton's <em>Transition-Edge
+                        Sensors</em> (2005), and shown to stay constant over 15 daily series. Fitting further into the
+                        data turned up a <strong>third pole</strong>, which is still an open question in the
+                        collaboration. Irwin and Hilton suggest a second thermal body; the readout electronics could
+                        also be involved, so both were tested: on the data a readout factor fits the transition state
+                        but not the superconducting or normal states, and on the bench, with the readout board
+                        measured by itself on a test board in place of the sensor (MIDAS DAQ controlled remotely;
+                        open and closed flux-locked loop, four gains, noise), the feedback loop has a single pole and
+                        all twelve channels look the same. So the pole is in the sensor, not the circuit. Next: data
+                        from a second injection point of the readout chain to cover its remaining stage, then a
+                        simulation of the settled model to estimate the collection efficiency of low-energy events,
+                        where no calibration line exists. The code works with SuperCDMS collaboration-internal data, so its repository is currently private (available on request).</p>
+                    </li>
+                    <li>
+                    <div class="pe-sub-head">
+                        <span class="pe-sub-title">Energy Estimators of Z7 at the 10.37 keV Line</span>
+                        <span class="pe-sub-date">Oct 2026</span>
+                    </div>
+                    <p>Compared every energy estimator that the Run 7 RQs allow on the same K-line events of Z7, from
+                        the plain optimal-filter sum to the fitted-pulse power integral; a linear regression on the
+                        per-channel optimal-filter amplitudes, cross-validated on paired event splits, gives several
+                        times the resolution of the plain sum. Repository private (available on request).</p>
                     </li>
                     </ul>
                     <div class="tags">
-                        <span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">ROOT</span><span class="tag">PCA</span><span class="tag">Signal Processing</span><span class="tag">TES Physics</span><span class="tag">SLURM / MSI HPC</span>
+                        <span class="tag">Python</span><span class="tag">C++</span><span class="tag">SciPy</span><span class="tag">ROOT</span><span class="tag">PCA</span><span class="tag">Signal Processing</span><span class="tag">TES Physics</span><span class="tag">Feedback Systems</span><span class="tag">MIDAS DAQ</span><span class="tag">SLURM / MSI HPC</span>
                     </div>
                 </div>
 
@@ -732,8 +770,20 @@
                 <span>Built a <strong>self-correcting pipeline</strong> for the mouse eye tracking: it finds the frames the model gets wrong without new labels, repairs them from the network's own heatmaps under a geometric check learned from the human labels, and retrains on the result; the retrained models make far fewer gross errors on frames labeled blind afterwards, and the chain runs on a new video without tuning (<a href="https://zhihengli0.github.io/mouse-behavior-tracking/index_en.html#s9" target="_blank">step 9 of the report page</a>).</span>
             </li>
             <li class="news-item">
+                <span class="nd">Nov 2026</span>
+                <span>Measured the <strong>DCRC phonon readout electronics</strong> on the bench with a test board in place of the sensor, running the MIDAS DAQ remotely: the flux-locked loop has a single pole, identical in all 12 channels, so the extra pole in the Z7 dI/dV is in the sensor, not the readout.</span>
+            </li>
+            <li class="news-item">
                 <span class="nd">Oct 2026</span>
                 <span>The <strong>mouse eye tracking</strong> report page went online (<a href="https://zhihengli0.github.io/mouse-behavior-tracking/" target="_blank">Chinese and English</a>): all 19 videos from 3 mice, recorded over multiple days, went through the same protocol, and most videos needed only 20–40 human labels; the work now turns to finding and repairing the frames that cannot be trusted.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Oct 2026</span>
+                <span>Compared the <strong>energy estimators</strong> of detector Z7 at the 10.37 keV line on the same K-line events; a linear regression on the per-channel optimal-filter amplitudes gives the best resolution.</span>
+            </li>
+            <li class="news-item">
+                <span class="nd">Oct 2026</span>
+                <span>Started the <strong>full-model collection efficiency</strong> of Z7: derived the TES electro-thermal equations, wrote our own complex-impedance fitting package and fitted the four sensor parameters in all three TES states; the data show a third pole, still an open question in the collaboration.</span>
             </li>
             <li class="news-item">
                 <span class="nd">Sep 2026</span>
